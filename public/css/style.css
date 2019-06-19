@@ -1,0 +1,166 @@
+
+#wapper{
+  /* font-size: 1.1vw; */
+  margin-left: 5px;
+}
+.fixtop{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: aliceblue;
+  width: 100%;
+  height: 200px;
+ 
+}
+
+
+.carousel-caption h2{
+  color: red;
+}
+.bar{
+  margin-top: 5px;
+  float: right;
+  margin-right: 20px;
+ 
+}
+.bar a{
+  padding-right:25px; 
+  color: black;
+  width: 30%;
+  
+}
+ul li a{
+  color: #000;
+}
+.unstyled h4{
+  color: dodgerblue;
+}
+.bar i{
+  padding-right: 0px 3px 0px 3px;
+}
+.na1{
+  padding-top : 10px;
+  border-top:1px solid #000;
+}
+ul.menu1 li a, ul.menu-sub li a{
+  color: black;
+}
+
+
+.menu{
+  position: relative;
+  display: inline-block;
+
+}
+
+.menu-sub, .menu-sub-full {
+  position: absolute;
+  display: none;
+  list-style: none;
+  text-decoration: none;
+  background-color: azure;
+  z-index: 1000;
+
+}
+.menu-sub-full li{
+  width: 1280px;
+}
+.menu-sub li{
+  width: 120px;
+}
+ul li a:hover{
+  color: rgb(253, 0, 0);
+}
+
+.menu2:hover .menu-sub,.menufull:hover .menu-sub-full {
+  display: block;
+
+}
+.menu-sub li:hover, .menu-sub li a:hover{
+  background-color:aliceblue;
+ 
+}
+ul.menu li {
+  /* padding-right: 15px 20px; */
+  /* width: 130px; */
+  text-align: center;
+  padding: 0px 5px 0px 5px;
+}
+ul.unstyled li{
+  width: 200px;
+}
+ul.unstyled li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px 10px 10px 0px;
+  text-align: left;
+}
+.search{
+  padding: 12px 5px 10px 0px;
+  width: 70%;
+}
+ul li.congcu,ul li.search2{
+  display: none;
+}
+.navbar-default .navbar-nav>li>a: hover{
+  color: red;
+}
+.bar .icon{
+  display:none;
+}
+
+
+/* content */
+.product{
+  padding-top: 10px;
+ padding-left: 10px;
+  padding-right: 10px;
+ padding-bottom: 15px;
+}
+.bt-cost button{
+  width: 80px;
+  margin: 5px;
+  padding: 4px;
+}
+.caption, .main.product{
+  text-align: center;
+}
+.cost{
+  color: red;
+  font-size: 16px;
+}
+
+.btpro{
+  width: 45%;
+}
+#content{
+  /* border-bottom:1px solid #000; */
+ 
+}
+/* footer */
+#footer{
+  padding-top: 20px;
+  border-top:1px solid #000;
+  text-align: center;
+}
+
+
+/* gio hàng*/
+#cart,#cart2{
+  color: red;
+  font-size: 17px;
+  
+}
+
+/*=====================================display cart====================================*/
+.xemGioHang{
+  margin-top: 180px;
+}
+
+.title{
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 25px;
+}
