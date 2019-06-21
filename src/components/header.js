@@ -6,10 +6,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<div>
-				{/* Page Preloder */}
-				<div id="preloder">
-					<div className="loader" />
-				</div>
+				 
 				{/* Header section */}
 				<header className="header-section">
 					<div className="header-top">
@@ -43,17 +40,17 @@ export default class Header extends Component {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> 
 					<nav className="main-navbar">
 						<div className="container">
 							{/* menu */}
 							<ul className="main-menu">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">About us</a></li>
+								<li> <Link to="/" className="nav-link">Home</Link> </li>
+								<li><Link to="/footer" className="nav-link"> About us</Link></li>
 								<li><a href="#">Event</a>
 									<ul className="sub-menu">
-										<li><a href="#">Donate Clothers</a></li>
-										<li><a href="#">Donate Foods</a></li>
+										<li><a href="#">Donate Clother</a></li>
+										<li><a href="#">Donate Food</a></li>
 										<li><a href="#">Donate Books</a></li>
 									 </ul>
 								</li>
@@ -70,7 +67,10 @@ export default class Header extends Component {
 								<li><a href="#">Account</a>
 									<ul className="sub-menu">
 										<li><a href="./product.html">Profile</a></li>
+										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>
 										<li><a href="./category.html">Log out Page</a></li>
+										<li><Link to="/join" className="nav-link">Join us</Link> </li>
+
 										 
 									</ul>
 								</li>

@@ -74,72 +74,16 @@ export default class Header extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="product-item">
-                                    <div className="pi-pic">
-                                        <img src="./img/product/9.jpg" alt />
-                                        <div className="pi-links">
-                                            <a href="#" className="add-card"><i className="flaticon-bag" /><span>ADD TO CART</span></a>
-                                            <a href="#" className="wishlist-btn"><i className="flaticon-heart" /></a>
-                                        </div>
-                                    </div>
-                                    <div className="pi-text">
-                                        <h6>$35,00</h6>
-                                        <p>Flamboyant Pink Top </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="product-item">
-                                    <div className="pi-pic">
-                                        <img src="./img/product/10.jpg" alt />
-                                        <div className="pi-links">
-                                            <a href="#" className="add-card"><i className="flaticon-bag" /><span>ADD TO CART</span></a>
-                                            <a href="#" className="wishlist-btn"><i className="flaticon-heart" /></a>
-                                        </div>
-                                    </div>
-                                    <div className="pi-text">
-                                        <h6>$35,00</h6>
-                                        <p>Black and White Stripes Dress</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="product-item">
-                                    <div className="pi-pic">
-                                        <img src="./img/product/11.jpg" alt />
-                                        <div className="pi-links">
-                                            <a href="#" className="add-card"><i className="flaticon-bag" /><span>ADD TO CART</span></a>
-                                            <a href="#" className="wishlist-btn"><i className="flaticon-heart" /></a>
-                                        </div>
-                                    </div>
-                                    <div className="pi-text">
-                                        <h6>$35,00</h6>
-                                        <p>Flamboyant Pink Top </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="product-item">
-                                    <div className="pi-pic">
-                                        <img src="./img/product/12.jpg" alt />
-                                        <div className="pi-links">
-                                            <a href="#" className="add-card"><i className="flaticon-bag" /><span>ADD TO CART</span></a>
-                                            <a href="#" className="wishlist-btn"><i className="flaticon-heart" /></a>
-                                        </div>
-                                    </div>
-                                    <div className="pi-text">
-                                        <h6>$35,00</h6>
-                                        <p>Flamboyant Pink Top </p>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                             
                         </div>
                         <div className="text-center pt-5">
                             <button className="site-btn sb-line sb-dark">LOAD MORE</button>
                         </div>
                     </div>
                 </section>
+
+                
             </div>
         );
     }
