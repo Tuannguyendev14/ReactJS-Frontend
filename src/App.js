@@ -5,6 +5,9 @@ import Index from './components/index';
 import Footer from './components/footer';
 import PostStatus from './components/postStatus';
 import Join from './components/join';
+import Login from './components/login';
+import Signup from './components/signup';
+import Detail from './components/detail';
 
 class App extends Component {
   render() { 
@@ -16,6 +19,9 @@ class App extends Component {
             <Route exact path= '/footer' component = {Footer}/>
             <Route exact path= '/poststatus' component = {PostStatus}/>
             <Route exact path= '/join' component = {Join}/>
+            <Route exact path= '/login' component = {Login}/>
+            <Route exact path= '/signup' component = {Signup}/>
+            <Route exact path= '/detail' component = {Detail}/>
         </BrowserRouter>
       </div>
       

@@ -1,4 +1,4 @@
- 
+  
 
 html,
 body {
@@ -73,7 +73,7 @@ ol {
 }
 
  
-} 
+ 
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -227,6 +227,7 @@ ol {
 	color: #8f8f8f;
 	margin-bottom: 25px;
 	line-height: 1.8;
+	font-size: 16px;	
 }
 
 .accordion-area .panel-body p span {
@@ -325,6 +326,7 @@ ol {
 
 .main-navbar {
 	background: #282828;
+	height: 67px;
 }
 
 .slicknav_menu {
@@ -341,6 +343,7 @@ ol {
 }
 
 .main-menu li a {
+	margin-top: 6px;
 	display: inline-block;
 	font-size: 25px;
 	color: #ffffff;
@@ -471,35 +474,7 @@ ol {
 .top-letest-product-section .section-title {
 	margin-bottom: 70px;
 }
-
-.product-slider .owl-nav {
-	position: absolute;
-	top: calc(50% - 60px);
-	width: 100%;
-	left: 0;
-}
-
-.product-slider .owl-nav button.owl-next,
-.product-slider .owl-nav button.owl-prev {
-	color: #a4a4a4;
-	font-size: 42px;
-	position: relative;
-}
-
-.product-slider .owl-nav button.owl-next {
-	float: right;
-	right: -92px;
-}
-
-.product-slider .owl-nav button.owl-prev {
-	float: left;
-	left: -92px;
-}
-
-.product-item .pi-pic {
-	position: relative;
-	display: block;
-}
+ 
 
 .product-item .tag-new,
 .product-item .tag-sale {
@@ -701,14 +676,15 @@ ol {
 }
 
 .footer-widget h2 {
-	font-size: 18px;
-	font-weight: 700;
+	font-size: 24px;
+	font-weight: 700;	
 	text-transform: uppercase;
 	color: #fff;
 	margin-bottom: 45px;
 }
 
 .footer-widget p {
+	font-size: 15px;
 	color: #8f8f8f;
 }
 
@@ -725,6 +701,7 @@ ol {
 
 .footer-widget ul:last-child {
 	margin-right: 0;
+	color: #8f8f8f ;
 }
 
 .footer-widget ul li a {
@@ -760,6 +737,7 @@ ol {
 	top: 6px;
 	background: #ec105a;
 }
+ 
 
 .fw-latest-post-widget .lp-item {
 	margin-bottom: 30px;
@@ -1237,7 +1215,7 @@ ol {
 }
 
 .product-details .p-stock {
-	font-size: 12px;
+	font-size: 18px;
 	color: #000;
 	font-weight: 700;
 	color: #414141;
@@ -1888,6 +1866,27 @@ ol {
 	}
 }
 
+@media(max-width:986px){
+	.contact-form input,
+	.contact-form textarea {
+		width: 171%;
+		height: 44px;
+		border: none;
+		padding: 0 18px;
+		background: #f0f0f0;
+		border-radius: 40px;
+		margin-bottom: 17px;
+		font-size: 20px;
+	}
+
+	.contact-form textarea {
+		padding-top: 16px;
+		border-radius: 18px;
+		height: 175px;
+		margin-bottom: 32px;
+	}
+}
+
 /* Medium screen : 992px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1905,6 +1904,7 @@ ol {
 /* Tablet :768px. */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	
 	.site-logo {
 		margin-bottom: 20px;
 	}
@@ -1963,7 +1963,10 @@ ol {
 
 /* Large Mobile :480px. */
 
+ 
+
 @media only screen and (max-width: 767px) {
+	 
 	.site-logo {
 		margin-bottom: 20px;
 	}
@@ -2047,6 +2050,8 @@ ol {
 		height: 400px;
 		margin-top: 70px;
 	}
+	
+	
 }
 
 /* Medium Mobile :480px. */
@@ -2100,4 +2105,5 @@ ol {
 	.social-links a span {
 		display: none;
 	}
+	
 }

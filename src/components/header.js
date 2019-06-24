@@ -28,13 +28,13 @@ export default class Header extends Component {
 									<div className="user-panel">
 										<div className="up-item">
 											<i className="flaticon-profile" />
-											<a href="#" style={{fontSize:'20px'} }> Sign In </a>  
+											<a href="/login" style={{fontSize:'20px'} }> Sign In </a>  
 										</div>
 										<div className="up-item">
 											<div className="shopping-card">
 												<i className="flaticon-profile" />
 											 </div>
-											<a href="#" style={{fontSize:'20px'} }>Log out</a>
+											<a href="/signup" style={{fontSize:'20px'} }>Log out</a>
 										</div>
 									</div>
 								</div>
