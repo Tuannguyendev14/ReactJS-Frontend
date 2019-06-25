@@ -13,9 +13,9 @@ export default class Header extends Component {
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-2 text-center text-lg-left">
-									{/* logo */}
+									 
 									<a href="./index.html" className="site-logo">
-										<img src="img/logo3.jpg" alt />
+										<img src="img/logo3.jpg"   />
 									</a>
 								</div>
 								<div className="col-xl-6 col-lg-5">
@@ -44,6 +44,7 @@ export default class Header extends Component {
 					<nav className="main-navbar">
 						<div className="container">
 							{/* menu */}
+							
 							<ul className="main-menu">
 								<li> <Link to="/" className="nav-link">Home</Link> </li>
 								<li><Link to="/footer" className="nav-link"> About us</Link></li>

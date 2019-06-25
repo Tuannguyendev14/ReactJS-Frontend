@@ -8,6 +8,7 @@ import Join from './components/join';
 import Login from './components/login';
 import Signup from './components/signup';
 import Detail from './components/detail';
+import index from './admin/trip/index';
 
 class App extends Component {
   render() { 
@@ -22,6 +23,8 @@ class App extends Component {
             <Route exact path= '/login' component = {Login}/>
             <Route exact path= '/signup' component = {Signup}/>
             <Route exact path= '/detail' component = {Detail}/>
+            <Route exact path= '/detail' component = {Detail}/>
+            <Route exact path= '/indexTrip' component = {index}/>
         </BrowserRouter>
       </div>
       

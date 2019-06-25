@@ -5,28 +5,28 @@ import Footer from './footer';
 
 export default class PostStatus extends Component {
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <br /> <br /> <br />
-        <div className='row'>
-          <div className="col-xs-0 col-sm-3 col-md-1 col-lg-1"> </div>
+render() {
+return (
+<div>
+  <Header />
+  <br /> <br /> <br />
+  <div className='row'>
+    <div className="col-xs-0 col-sm-3 col-md-1 col-lg-1"> </div>
 
-          <div className="col-xs-12 col-sm-12 col-md-9 col-lg-6 contact-section contact-info">
+    <div className="col-xs-12 col-sm-12 col-md-9 col-lg-6 contact-section contact-info">
 
-            <h3>Post your event</h3>
+      <h3>Post your event</h3>
 
-            <form className="contact-form">
-              <input type="text" placeholder="Your name" />
-              <input type="number" placeholder="Your phone number" />
-              <input type="text" placeholder="Event's name" />
-              <input type="number" placeholder="Number of participants" />
+      <form className="contact-form">
+        <input type="text" placeholder="Your name" />
+        <input type="number" placeholder="Your phone number" />
+        <input type="text" placeholder="Event's name" />
+        <input type="number" placeholder="Number of participants" />
 
-              <input type="text " placeholder="Venue name" />
-              <textarea placeholder="Description" />
+        <input type="text " placeholder="Venue name" />
+        <textarea placeholder="Description" />
 
-              <button className="site-btn">Post now</button>
+        <button className="site-btn">Post now</button>
             </form>
           </div>
 
@@ -49,6 +49,8 @@ export default class PostStatus extends Component {
 
 
         <br /><br />
+
+        
 
         <Footer />
 

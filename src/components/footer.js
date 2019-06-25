@@ -10,7 +10,7 @@ return (
     <section className="footer-section">
         <div className="container">
             <div className="footer-logo text-center">
-                <a href="index.html"><img src="./img/logo-light.png"   /></a>
+                 <h2 style={{fontWeight:'bold', fontSize:'37px', color:'white'}}>Let join hands together, to end extrime poverty !</h2>
             </div>
             <div className="row">
                 <div className="col-lg-3 col-sm-6">
