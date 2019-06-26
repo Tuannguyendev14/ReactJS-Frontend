@@ -1,4 +1,7 @@
-  
+.d-block{
+    width: 100%;
+    height: 80vh;
+}
 
 .latest-news-area{
 margin-top: 40px;
@@ -122,6 +125,61 @@ margin-top: 40px;
 	background: #3498db;
 }
 
+.under{
+	background:gray;
+	height: 140px;;
+}  
+/*---------------------
+  Commom elements
+-----------------------*/
+
+/* buttons */
+
+.site-btn {
+	display: inline-block;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	min-width: 167px;
+	padding: 18px 47px 14px;
+	border-radius: 50px;
+	text-transform: uppercase;
+	background: #f51167;
+	color: #fff;
+	line-height: normal;
+	cursor: pointer;
+	text-align: center;
+}
+
+.site-btn:hover {
+	color: #fff;
+	background: #0077b5;
+	 
+}
+
+.site-btn.sb-white {
+	background: #fff;
+	color: #111111;
+}
+
+.site-btn.sb-line {
+	background: transparent;
+	color: #fff;
+	-webkit-box-shadow: inset 0 0 0 1px #fff;
+	box-shadow: inset 0 0 0 1px #fff;
+}
+
+.site-btn.sb-dark {
+	background: #413a3a;
+}
+
+.site-btn.sb-dark.sb-line {
+	background-color: transparent;
+	color: #111111;
+	-webkit-box-shadow: inset 0 0 0 1px #111111;
+	box-shadow: inset 0 0 0 1px #111111;
+}
+
  
 html,
 body {
@@ -129,6 +187,15 @@ body {
 	font-family: 'Josefin Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	 
+}
+
+.my-frame {
+	margin:15px;
+	border: 1px solid #111;
+	border-radius: 4px;
+	padding: 19px;
+	margin-top: 30px;
+	height: 150px;
 }
 
 h1,
@@ -233,8 +300,8 @@ ol {
 
 .header-search-form input {
 	width: 100%;
-	height: 44px;
-	font-size: 14px;
+	height: 47px;
+	font-size: 17px;
 	border-radius: 50px;
 	border: none;
 	padding: 0 19px;
@@ -1559,7 +1626,7 @@ ol {
 	height: 32px;
 	background: #f0f0f0;
 	color: #414141;
-	font-size: 14px;
+	font-size: 20px;
 	border-radius: 50%;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -1619,6 +1686,7 @@ ol {
 	.container {
 		max-width: 1175px;
 	}
+	
 }
 
 @media (max-width: 1350px) {
@@ -1636,6 +1704,33 @@ ol {
 		right: 0;
 		margin: 0 10px;
 	}
+	
+}
+
+@media(max-width:1800px){
+	.view a{
+		height: 56px;
+		margin-top: 43px;
+		margin-left: 650px;
+		font-size: 24px;
+		background: white;
+		font-family: "monserrat";
+		cursor: pointer;
+		padding: 10px 20px;
+		color: #3498db;
+		transition:   0.8s ;
+		border: 1px solid #3498db;
+		 
+	}	
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+	.view a{
+		height: 51px;
+    margin-top: 43px;
+    margin-left: 427px;
+    font-size: 24px;
+		 
+	}	
 }
 
 @media(max-width:986px){
@@ -1876,6 +1971,27 @@ ol {
 	}
 	.social-links a span {
 		display: none;
+	}
+	.view a{
+		height: 46px;
+		margin-top: 15px;
+		margin-left: 140px;
+		font-size: 20px;
+		background: white;
+		font-family: "monserrat";
+		cursor: pointer;
+		padding: 6px 20px;
+		color: #3498db;
+		transition: 0.8s;
+		border: 1px solid #3498db;
+	}
+	.under{
+		background:gray;
+		height: 80px;;
+	} 
+	.d-block{
+		width: 100%;
+		height: 40vh;
 	}
 	
 }

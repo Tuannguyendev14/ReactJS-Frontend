@@ -20,7 +20,7 @@ export default class Header extends Component {
 								</div>
 								<div className="col-xl-6 col-lg-5">
 									<form className="header-search-form">
-										<input type="text" placeholder="Search on divisima ...." />
+										<input type="text" placeholder="Da Nang Volunteering ...." />
 										<button><i className="flaticon-search" /></button>
 									</form>
 								</div>

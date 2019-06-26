@@ -96,18 +96,14 @@ export default class Header extends Component {
 
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                     <div className="row">
-                        <iframe style={{ width: '100%', height: '800px' }} src="https://www.youtube.com/embed/asbwvNyjRrA" frameBorder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe style={{ width: '100%', height: '800px' }} src="https://www.youtube.com/embed/EmTSk_flsKU" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
-                    <div className="row " style={{ background: 'gray', height: '150px' }}>
-                        <div className="row"></div>
-                        <div className="row view">
+                    <div className="row under">
+                         <div className="row view">
                             <a href="">Read more...</a>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
 
         );

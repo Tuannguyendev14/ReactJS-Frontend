@@ -8,7 +8,14 @@ import Join from './components/join';
 import Login from './components/login';
 import Signup from './components/signup';
 import Detail from './components/detail';
-import index from './admin/trip/index';
+import Admin from './admin/homepage/admin';
+import addPost from './admin/posts/add';
+import indexPost from './admin/posts/index';
+import showPost from './admin/posts/show';
+import indexUsers from './admin/users/index';
+import showUser from './admin/users/show';
+import addUser from './admin/users/add';
+
 
 class App extends Component {
   render() { 
@@ -24,7 +31,14 @@ class App extends Component {
             <Route exact path= '/signup' component = {Signup}/>
             <Route exact path= '/detail' component = {Detail}/>
             <Route exact path= '/detail' component = {Detail}/>
-            <Route exact path= '/indexTrip' component = {index}/>
+            <Route exact path= '/admin' component = {Admin}/>
+            <Route exact path= '/addPost' component = {addPost}/>
+            <Route exact path= '/showPost' component = {showPost}/>
+            <Route exact path= '/indexPost' component = {indexPost}/>
+            <Route exact path= '/showUser' component = {showUser}/>
+            <Route exact path= '/indexUser' component = {indexUsers}/>
+            <Route exact path= '/addUser' component = {addUser}/>
+
         </BrowserRouter>
       </div>
       

@@ -15,7 +15,7 @@
 body {
 
     color: #797979;
-    
+    font-family: time new roman;
 
     padding: 0px !important;
 
@@ -502,7 +502,7 @@ table tr th { color: #688a7e;}
 #sidebar {
 
     width: 316px;
-
+  
     height: 100%;
 
     position: fixed;
@@ -651,7 +651,7 @@ ul.sidebar-menu li.sub-menu{
 
     line-height: 15px;
 
-    font-size: 16px;
+    font-size: 20px;
 
 }
 
@@ -675,7 +675,7 @@ ul.sidebar-menu li a{
 
     padding: 15px 0 15px 10px;
 
-    font-size: 16px;
+    font-size: 20px;
 
     font-weight: 300;
 
@@ -961,7 +961,7 @@ ul.sidebar-menu li.active a i {
 
 #main-content {
 
-    margin-left: 180px;
+    margin-left: 300px;
 
 }
 
@@ -1016,7 +1016,7 @@ ul.sidebar-menu li.active a i {
     background: rgba(54,66,74,1);
 
     border-bottom: 1px solid #f1f2f7;
-
+     
 }
 
 .panel-content{
@@ -3571,7 +3571,7 @@ div[data-role="editor-toolbar"] {
 
 }
 
-
+ 
 
 .toggle-nav .icon-reorder {
 

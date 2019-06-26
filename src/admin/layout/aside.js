@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-
-
-
-
+import { Link } from 'react-router-dom';
 
 export default class App extends Component {
 
@@ -15,34 +12,34 @@ export default class App extends Component {
 
                         <ul className="sidebar-menu">
                             <li className="active">
-                                <a className href="manage_user.php">
+                                <Link to="/indexPost">
                                     <span>Manage status</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="sub-menu">
-                                <a href="giaodien.php" className>
-                                    <span>Add Product</span>
-                                </a>
+                                <Link to="/indexUser" className>
+                                    <span>Manage users</span>
+                                </Link>
                             </li>
                             <li className="sub-menu">
-                                <a href="select.php" className>
+                                <Link to="select.php" className>
                                     <span>Update Product</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="sub-menu">
-                                <a href="manage_cus.php" className>
+                                <Link to="manage_cus.php" className>
                                     <span>Magane order</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="manage_feedback.php" className>
+                                <Link to="manage_feedback.php" className>
                                     <span>Manage Feedback</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a className href="logout.php">
+                                <Link to="logout.php">
                                     <span>Log out</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
