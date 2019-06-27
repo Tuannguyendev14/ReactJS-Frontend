@@ -1,6 +1,6 @@
 .d-block{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
 }
 
 .latest-news-area{
@@ -179,8 +179,8 @@ margin-top: 40px;
 	-webkit-box-shadow: inset 0 0 0 1px #111111;
 	box-shadow: inset 0 0 0 1px #111111;
 }
-
  
+
 html,
 body {
 	height: 100%;

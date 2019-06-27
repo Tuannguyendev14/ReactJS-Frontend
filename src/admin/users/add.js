@@ -7,7 +7,7 @@ export default class addUser extends Component {
 
     render() {
         return (
-            <body>
+            <div>
                 <section id="container" >
                     <Header />
                     <Aside />
@@ -89,7 +89,7 @@ export default class addUser extends Component {
 
 
 
-            </body >
+            </div >
         );
     }
 

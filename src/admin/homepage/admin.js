@@ -8,7 +8,7 @@ export default class indexTrip extends Component {
 
     render() {
         return (
-            <body>
+            <div>
                 <section id="container" >
                     <Header />
                     <Aside />
@@ -21,12 +21,7 @@ export default class indexTrip extends Component {
                     </section>
 
                 </section>
-
-
-
-
-
-            </body >
+            </div >
         );
     }
 

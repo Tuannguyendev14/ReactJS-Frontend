@@ -7,17 +7,17 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <header class="header dark-bg">
-                    <div class="toggle-nav">
-                        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"> </div>
+                <header className="header dark-bg">
+                    <div className="toggle-nav">
+                        <div className="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"> </div>
                     </div>
 
-                    <Link to="/admin" class="logo">DA NANG   <span class="lite">VOLUNTEERING</span></Link>
+                    <Link to="/admin" className="logo">DA NANG   <span className="lite">VOLUNTEERING</span></Link>
 
-                    <div class="top-nav notification-row">
+                    <div className="top-nav notification-row">
 
-                        <ul class="nav pull-right top-menu">
-                            <li id="task_notificatoin_bar" class="dropdown" />
+                        <ul className="nav pull-right top-menu">
+                            <li id="task_notificatoin_bar" className="dropdown" />
 
                         </ul>
 

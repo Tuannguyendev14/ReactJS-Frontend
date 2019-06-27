@@ -23,14 +23,14 @@ export default class indexUser extends Component {
                         </center><br/>
 
                         <div className="row">
-                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <Link to="/addUser">
-                                    <button type="button" class="btn btn-success btn-lg " style={{ marginLeft: '30px' }}><span className="glyphicon glyphicon-plus"></span> Add new user </button>
+                                    <button type="button" className="btn btn-success btn-lg " style={{ marginLeft: '30px' }}><span className="glyphicon glyphicon-plus"></span> Add new user </button>
 
                                 </Link>
                             </div>
 
-                            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-8">
+                            <div className="col-xs-11 col-sm-11 col-md-11 col-lg-8">
                                 <Control />
                             </div>
                         </div>
