@@ -71,7 +71,7 @@ const routes=[
     {
         path:'/showPost',
         exact:false,
-        main: () => <ShowPost/>
+        main: ({match}) => <ShowPost match={match}/>
     },
     {
         path:'/indexUser',
@@ -81,7 +81,7 @@ const routes=[
     {
         path:'/showUser',
         exact:false,
-        main: () => <ShowUser/>
+        main: ({match}) => <ShowUser match={match}/>
     },
     {
         path:'/addUser',

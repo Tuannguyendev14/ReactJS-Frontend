@@ -8,9 +8,38 @@ import { Link } from 'react-router-dom';
 export default class indexPost extends Component {
 
     render() {
+
+        var posts =[
+            {
+                id: 1,
+                name:'NGuyen huu tuan'
+            },
+            {
+                id: 2,
+                name:'NGuyen huu tung'
+            },
+            {
+                id: 3,
+                name:'NGuyen huu hung'
+            },
+            {
+                id: 4,
+                name:'NGuyen huu dung'
+            }
+        ]
+
+        var results = posts.map((post, index)=>{
+            var result=null;
+            if(posts.length >0){
+                result = <Thumbanail key ={index} name={post.name}/>
+            }
+            return result;
+        });
+
+        
         return (
 
-            <body>
+            <div>
                 <section id="container">
                     <Header />
                     <Aside />
@@ -23,27 +52,21 @@ export default class indexPost extends Component {
                         </center><br/>
 
                         <div className="row">
-                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <Link to="/addPost">
-                                    <button type="button" class="btn btn-success btn-lg " style={{ marginLeft: '30px' }}><span className="glyphicon glyphicon-plus"></span> Add new post</button>
+                                    <button type="button" className="btn btn-success btn-lg " style={{ marginLeft: '30px' }}><span className="glyphicon glyphicon-plus"></span> Add new post</button>
     
                                 </Link>
                             </div>
 
-                            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-8">
+                            <div className="col-xs-11 col-sm-11 col-md-11 col-lg-8">
                                 <Control/>
                             </div>
                         </div>
 
                         <div className="row">
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
-                            <Thumbanail />
+                            {results}
+                             
 
                         </div>
 
@@ -55,7 +78,7 @@ export default class indexPost extends Component {
 
 
 
-            </body>
+            </div>
         );
     }
 
