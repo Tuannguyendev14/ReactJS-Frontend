@@ -8,17 +8,17 @@ export default class Horizontal extends Component {
             <div>
                 <div className="progress">
                     <div className="progress-bar progress-bar-success" role="progressbar" style={{ width: '40%' }}>
-                        <a href="#">Donate cloters</a>
+                        <a  >Donate cloters</a>
                     </div>
                     <div className="progress-bar progress-bar-warning" role="progressbar" style={{ width: '20%' }}>
-                        <a href="#">Donate food</a>
+                        <a >Donate food</a>
                     </div>
                     <div className="progress-bar progress-bar-danger" role="progressbar" style={{ width: '20%' }}>
-                        <a href="#">Donate books </a>
+                        <a  >Donate books </a>
                     </div>
                     <div className="progress-bar progress-bar-info" role="progressbar" aria-valuenow={50} aria-valuemin={0}
                         aria-valuemax={100} style={{ width: '20%' }}>
-                        <a href="#">Donate money</a>
+                        <a  >Donate money</a>
                     </div>
                 </div>
                 <br />

@@ -8,7 +8,7 @@ export default class addPost extends Component {
 
     render() {
         return (
-            <body>
+            <div>
                 <section id="container" >
                     <Header />
                     <Aside />
@@ -26,7 +26,7 @@ export default class addPost extends Component {
 
 
 
-            </body >
+            </div >
         );
     }
 

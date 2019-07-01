@@ -9,12 +9,12 @@ export default class Aside extends Component {
                 <div id="sidebar" className="nav-collapse ">
                     <ul className="sidebar-menu">
                         <li className='active'>
-                            <Link to='/indexPost' className="my-link">
+                            <Link to='/posts' className="my-link">
                                 <span> Manage status</span>
                             </Link>
                         </li>
                         <li className='sub-menu'>
-                            <Link to='/indexUser' className="my-link">
+                            <Link to='/users' className="my-link">
                                 <span> Manage users</span>
                             </Link>
                         </li>

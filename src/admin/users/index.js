@@ -10,7 +10,7 @@ export default class indexUser extends Component {
     render() {
         return (
 
-            <body>
+            <div>
                 <section id="container">
                     <Header />
                     <Aside />
@@ -56,7 +56,7 @@ export default class indexUser extends Component {
 
 
 
-            </body>
+            </div>
         );
     }
 
