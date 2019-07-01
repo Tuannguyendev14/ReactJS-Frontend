@@ -26,7 +26,7 @@ export default class Detail extends Component {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="product-pic-zoom">
-                                    <img className="product-big-img" style={{width:'600px'}} src="img/tenan/lulut.jfif" alt />
+                                    <img className="product-big-img" style={{width:'600px'}} src="img/tenan/lulut.jfif" alt="ok" />
                                 </div>
                                  
                             </div>
@@ -57,7 +57,7 @@ export default class Detail extends Component {
                                         </div>
                                         <div id="collapse2" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div className="panel-body">
-                                                <img src="./img/cards.png" alt />
+                                                <img src="./img/cards.png" alt="ok" />
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
                                             </div>
                                         </div>

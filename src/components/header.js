@@ -15,7 +15,7 @@ export default class Header extends Component {
 								<div className="col-lg-2 text-center text-lg-left">
 									 
 									<a href="./index.html" className="site-logo">
-										<img src="img/logo3.jpg"   />
+										<img src="img/logo3.jpg" alt="ok"  />
 									</a>
 								</div>
 								<div className="col-xl-6 col-lg-5">
@@ -48,14 +48,14 @@ export default class Header extends Component {
 							<ul className="main-menu">
 								<li> <Link to="/" className="nav-link">Home</Link> </li>
 								<li><Link to="/footer" className="nav-link"> About us</Link></li>
-								<li><a href="#">Event</a>
+								<li><a href="/ewrw">Event</a>
 									<ul className="sub-menu">
-										<li><a href="#">Donate Clother</a></li>
-										<li><a href="#">Donate Food</a></li>
-										<li><a href="#">Donate Books</a></li>
+										<li><a href="/ffwef">Donate Clother</a></li>
+										<li><a href="/erwe">Donate Food</a></li>
+										<li><a href="/rweew ">Donate Books</a></li>
 									 </ul>
 								</li>
-								<li><a href="#">Pages</a>
+								<li><a href="/kk">Pages</a>
 									<ul className="sub-menu">
 										<li><a href="./product.html">Product Page</a></li>
 										<li><a href="./category.html">Category Page</a></li>
@@ -64,8 +64,8 @@ export default class Header extends Component {
 										<li><a href="./contact.html">Contact Page</a></li>
 									</ul>
 								</li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Account</a>
+								<li><a href="/ll">Blog</a></li>
+								<li><a href="/kk">Account</a>
 									<ul className="sub-menu">
 										<li><a href="./product.html">Profile</a></li>
 										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>

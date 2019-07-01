@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class Blog extends Component {
 
@@ -10,7 +9,7 @@ export default class Blog extends Component {
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
-                            <img src="img/blogs/tnh3.jpg" className="img-responsive" />
+                            <img src="img/blogs/tnh3.jpg" className="img-responsive" alt="ok" />
                             <div className="deat">
                                 <span>29</span>
                                 <span>June</span>
@@ -30,7 +29,7 @@ export default class Blog extends Component {
                                 Không phải đi để trải nghiệm mà đi để thấu hiểu.
                                 "Chăm sóc - Yêu thương - Chia sẻ"
                                     </p><br />
-                            <a href="">Read more...</a>
+                            <a href="/kkk">Read more...</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +38,7 @@ export default class Blog extends Component {
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
-                            <img src="img/blogs/tnh2.jpg" className="img-responsive" />
+                            <img src="img/blogs/tnh2.jpg" className="img-responsive" alt="ok" />
 
                             <div className="deat">
                                 <span>30</span>
@@ -59,7 +58,7 @@ export default class Blog extends Component {
                                 những điều tốt đẹp nhất từ
                                 gia đình và xã hội.
                             </p><br />
-                            <a href="">Read more...</a>
+                            <a href="/ll">Read more...</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +67,7 @@ export default class Blog extends Component {
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
-                            <img src="img/blogs/tnh5.jpg" className="img-responsive" />
+                            <img src="img/blogs/tnh5.jpg" className="img-responsive" alt="ok"/>
 
                             <div className="deat">
                                 <span>31</span>
@@ -89,7 +88,7 @@ export default class Blog extends Component {
 
 
                             </p><br />
-                            <a href="">Read more...</a>
+                            <a href="/ll">Read more...</a>
                         </div>
                     </div>
                 </div>

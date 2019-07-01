@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
-import FormPost from './../../components/formPost';
-    
+import Form from './form';
+
 
 export default class addPost extends Component {
+
+    
 
     render() {
         return (
@@ -15,11 +17,11 @@ export default class addPost extends Component {
                 </section>
                 <section id="main-content">
                     <section className="wrapper">
-                        <br/><br/>
+                        <br /><br />
                         <center><h1>Create new post</h1></center>
-                         <FormPost/> 
+                        <Form />
                     </section>
-                    
+
                 </section>
 
 

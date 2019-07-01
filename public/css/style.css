@@ -180,7 +180,9 @@ margin-top: 40px;
 	box-shadow: inset 0 0 0 1px #111111;
 }
  
-
+.mr-bot{
+	margin-bottom: 20px;
+}
 html,
 body {
 	height: 100%;

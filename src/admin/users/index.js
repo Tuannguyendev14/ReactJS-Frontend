@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
-import Thumbanail from './../layout/thumbanail';
+import Thumbanail from './thumbanail';
 import Control from './../layout/control';
 import { Link } from 'react-router-dom';
 

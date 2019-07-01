@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
-import Thumbanail from './../layout/thumbanail';
+import Thumbanail from './thumbanail';
 import Control from './../layout/control';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import apiCaller from './../../utils/apicaller';
+import callApi from './../../utils/apiCaller';
+
 
 class indexPost extends Component {
     constructor(props) {
@@ -17,23 +17,50 @@ class indexPost extends Component {
     }
 
     componentDidMount() {
-        apiCaller('posts', 'GET', null).then(res => {
-            this.setState = ({
+        callApi('posts', 'GET', null).then(res => {
+            this.setState({
                 posts: res.data
             });
         });
     }
+
+    onDelete = (id) => {
+        var { posts } = this.state;
+        callApi(`posts/${id}`, 'DELETE', null).then(res => {
+            if (res.status === 200) {
+                var index = this.findIndex(id);
+                if(index!==-1){
+                    posts.splice(index,1);
+                    this.setState({
+                        posts:posts
+                    });
+                }
+            }
+        });
+    }
+
+    findIndex = (id) => {
+        var { posts } = this.state;
+        var result = -1;
+        posts.forEach((post, index) => {
+            if (post.id === id) {
+                result = index;
+            }
+        });
+        return result;
+    }
+
     render() {
-        console.log('render');
 
         // var {posts} = this.props ;
         var { posts } = this.state;
+        
 
         var results = posts.map((post, index) => {
             var result = null;
             if (posts.length > 0) {
                 result = <Thumbanail key={index} index={index}
-                    post={post} />
+                    post={post} onDelete={this.onDelete} />
             }
             return result;
         });
@@ -56,7 +83,7 @@ class indexPost extends Component {
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <Link to="/addPost">
-                                    <button type="button" className="btn btn-success btn-lg " style={{ marginLeft: '0px' }}><span className="glyphicon glyphicon-plus"></span> Add new post</button>
+                                    <button type="button" className="btn btn-success btn-lg " style={{ marginLeft: '10px' }}><span className="glyphicon glyphicon-plus"></span> Add new post</button>
 
                                 </Link>
                             </div>

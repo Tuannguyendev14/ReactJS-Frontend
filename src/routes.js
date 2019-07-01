@@ -61,7 +61,7 @@ const routes=[
     {
         path:'/addPost',
         exact:false,
-        main: () => <AddPost/>
+        main:({history}) => <AddPost history={history}/>
     },
     {
         path:'/posts',
@@ -74,9 +74,9 @@ const routes=[
         main: ({match}) => <ShowPost match={match}/>
     },
     {
-        path:'/posts/:id/edit',
+        path:'/post/:id/edit',
         exact:false,
-        main: ({match}) => <AddPost match={match}/>
+        main: ({match,history}) => <AddPost match={match} history={history}/>
     },
     {
         path:'/users',
