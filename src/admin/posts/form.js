@@ -31,24 +31,36 @@ export default class FormPost extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         var { history } = this.props;
-        var { user_name, phone_number, event_name, event_image, nu_participant, venue, description } = this.state;
-        callApi('posts', 'POST', {
-            user_name: user_name,
-            phone_number: phone_number,
-            event_name: event_name,
-            event_image: event_image,
-            nu_participant: nu_participant,
-            venue: venue,
-            description: description
-        }).then(res => {
-            history.goBack();
-        });
-
+        var { id, user_name, phone_number, event_name, event_image, nu_participant, venue, description } = this.state;
+        if(id){ // update
+            callApi(`posts/${id}`, 'PUT', {
+                user_name: user_name,
+                phone_number: phone_number,
+                event_name: event_name,
+                event_image: event_image,
+                nu_participant: nu_participant,
+                venue: venue,
+                description: description
+            }).then(res => {
+                history.goBack();
+            });
+        }else{ // add new data
+            callApi('posts', 'POST', {
+                user_name: user_name,
+                phone_number: phone_number,
+                event_name: event_name,
+                event_image: event_image,
+                nu_participant: nu_participant,
+                venue: venue,
+                description: description
+            }).then(res => {
+                history.goBack();
+            });    
+        }
     }
 
     componentDidMount() {
-        var { match } = 14;
-        console.log(match);
+        var { match } = this.props;
         if (match) {
             var id = match.params.id;
             callApi(`posts/${id}`, 'GET', null).then(res => {

@@ -12,7 +12,7 @@ export default class Thumbanail extends Component {
     }
     render() {
         var { post } = this.props;
-
+        
         return (
             <div className="col-md-6 col-lg-4 my-padding-bottom-19 my-filter-object my-booking-purpose">
                 <div className="my-frame">
@@ -21,7 +21,7 @@ export default class Thumbanail extends Component {
                     </div>
                     <div className="d-flex flex-wrap">
                         <div className="my-padding-right-8 my-padding-bottom-8  ">
-                            <Link to="/lll">
+                            <Link to={`/show/${post.id}`}>
                                 <button type="button" className="btn btn-success mr-10"><span
                                     className="glyphicon glyphicon-eye-open"> Detail</span></button>
                             </Link>

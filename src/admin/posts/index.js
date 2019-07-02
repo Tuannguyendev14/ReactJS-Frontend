@@ -29,10 +29,10 @@ class indexPost extends Component {
         callApi(`posts/${id}`, 'DELETE', null).then(res => {
             if (res.status === 200) {
                 var index = this.findIndex(id);
-                if(index!==-1){
-                    posts.splice(index,1);
+                if (index !== -1) {
+                    posts.splice(index, 1);
                     this.setState({
-                        posts:posts
+                        posts: posts
                     });
                 }
             }
@@ -54,7 +54,6 @@ class indexPost extends Component {
 
         // var {posts} = this.props ;
         var { posts } = this.state;
-        
 
         var results = posts.map((post, index) => {
             var result = null;
@@ -95,8 +94,6 @@ class indexPost extends Component {
 
                         <div className="row">
                             {results}
-
-
                         </div>
 
                     </section>

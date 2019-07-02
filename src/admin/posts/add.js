@@ -6,9 +6,10 @@ import Form from './form';
 
 export default class addPost extends Component {
 
-    
+
 
     render() {
+        var { history, match } = this.props;
         return (
             <div>
                 <section id="container" >
@@ -19,7 +20,7 @@ export default class addPost extends Component {
                     <section className="wrapper">
                         <br /><br />
                         <center><h1>Create new post</h1></center>
-                        <Form />
+                        <Form history={history} match={match}/>
                     </section>
 
                 </section>

@@ -66,12 +66,12 @@ const routes=[
     {
         path:'/posts',
         exact: false,
-        main: () => <IndexPost/>
+        main: ({match}) => <IndexPost match={match} />
     },
     {
-        path:'/posts/:id',
+        path:'/show/:id',
         exact:false,
-        main: ({match}) => <ShowPost match={match}/>
+        main: ({match}) => <ShowPost match={match}  />
     },
     {
         path:'/post/:id/edit',

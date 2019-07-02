@@ -1,8 +1,9 @@
-import * as types from './../constants/actionTypes'
+import * as types from './../constants/actionTypes';
 
-export const listAll = () => {
+export const listPosts = (posts) => {
     return {
-        type : types.POST_ALL
+        type : types.LIST_POSTS,
+        posts
     }
 } 
  
