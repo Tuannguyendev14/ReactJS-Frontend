@@ -3,20 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
- 
+
 //import thu vien cua redux 
-import {createStore} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import myReducer from './reducers/index';
 import { Provider } from 'react-redux';
-const store = createStore(myReducer);
+import thunk from 'redux-thunk';
+
+const store = createStore(myReducer, applyMiddleware(thunk));
 
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
-    </Provider> ,
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
 
- 
+
 serviceWorker.unregister();

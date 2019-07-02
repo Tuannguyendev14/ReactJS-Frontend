@@ -6,7 +6,7 @@ import Control from './../layout/control';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import callApi from './../../utils/apiCaller';
-
+import  {actFetchPostsRequest}  from './../../actions/index';
 
 class indexPost extends Component {
     constructor(props) {
@@ -17,11 +17,7 @@ class indexPost extends Component {
     }
 
     componentDidMount() {
-        callApi('posts', 'GET', null).then(res => {
-            this.setState({
-                posts: res.data
-            });
-        });
+        this.props.fetchAllPosts();
     }
 
     onDelete = (id) => {
@@ -52,8 +48,8 @@ class indexPost extends Component {
 
     render() {
 
-        // var {posts} = this.props ;
-        var { posts } = this.state;
+        var { posts } = this.props;
+        //var { posts } = this.state;
 
         var results = posts.map((post, index) => {
             var result = null;
@@ -99,16 +95,9 @@ class indexPost extends Component {
                     </section>
 
                 </section>
-
-
-
-
-
             </div>
         );
     }
-
-
 }
 
 const mapStateToProps = (state) => {
@@ -117,4 +106,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(indexPost);
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        fetchAllPosts: () => {
+            dispatch(actFetchPostsRequest());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(indexPost);
