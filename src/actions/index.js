@@ -93,3 +93,10 @@ export const actReadPost = (post) => {
         post
     }
 }
+
+export const filterPost = (filter)=>{
+    return {
+        type: types.FILTER_POST,
+        filter
+    }
+}

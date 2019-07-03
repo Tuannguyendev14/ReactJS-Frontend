@@ -50,7 +50,6 @@ class FormPost extends Component {
             this.props.onSubmit(post);
         }
         history.goBack();
-
     }
 
     componentDidMount() {
@@ -73,13 +72,11 @@ class FormPost extends Component {
                 venue : nextProps.postEditting.venue , 
                 description : nextProps.postEditting.description  
             });
-
         } 
     }
 
     render() {
         return (
-
             <div className='row'>
                 <div className="col-xs-0 col-sm-0 col-md-0 col-lg-3"> </div>
                 <div className="col-xs-12 col-sm-12 col-md-6 col-lg-7 contact-section contact-info">
