@@ -28,20 +28,8 @@ export default class Detail extends Component {
                                 <div className="product-pic-zoom">
                                     <img className="product-big-img" style={{width:'600px'}} src="img/tenan/lulut.jfif" alt="ok" />
                                 </div>
-                                 
-                            </div>
-                            <div className="col-lg-6 product-details">
-                                <h2 className="p-title">Xóa đói giảm nghèo tại Đà Nẵng</h2>
-                                <h3 className="p-price">29-06-2019</h3>
-                                <h4 className="p-stock">Time : <span>08:00 AM -> 17:00 PM</span></h4>
-                                 
-                                
-                                <Link to="/join" className="site-btn">JOIN NOW</Link>
-                                <div id="accordion" className="accordion-area">
-                                    <div className="panel">
-                                        <div className="panel-header" id="headingOne">
-                                            <button className="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
-                                        </div>
+                                <div className="panel">
+                                        
                                         <div id="collapse1" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                             <div className="panel-body">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
@@ -51,6 +39,16 @@ export default class Detail extends Component {
                                             </div>
                                         </div>
                                     </div>
+                            </div>
+                            <div className="col-lg-6 product-details">
+                                <h2 className="p-title">Xóa đói giảm nghèo tại Đà Nẵng</h2>
+                                <h3 className="p-price">29-06-2019</h3>
+                                <h4 className="p-stock">Time : <span>08:00 AM -> 17:00 PM</span></h4>
+                                 
+                                
+                                <Link to="/join" className="site-btn">JOIN NOW</Link>
+                                <div id="accordion" className="accordion-area">
+                                    
                                     <div className="panel">
                                         <div className="panel-header" id="headingTwo">
                                             <button className="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Sponsors </button>

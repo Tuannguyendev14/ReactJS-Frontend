@@ -2,37 +2,24 @@ import React, { Component } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
 import { Link } from 'react-router-dom';
-import callApi from './../../utils/apiCaller';
+import { connect } from 'react-redux';
+import * as actions from './../../actions/index';
 
-
-export default class showPost extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            post: []
-        };
-    }
+class showPost extends Component {
 
     componentDidMount() {
         var { match } = this.props;
-        console.log(match);
         if (match) {
             var id = match.params.id;
-            callApi(`posts/${id}`, 'GET', null).then(res => {
-                var data = res.data;
-                this.setState({
-                    post: data
-                });
-            });
+            this.props.onReadPost(id);
+            console.log('ok');
         }
     }
 
     render() {
-        var { post } = this.state;
+        var { post } = this.props;
 
         return (
-
             <div>
                 <section id="container">
                     <Header />
@@ -41,12 +28,13 @@ export default class showPost extends Component {
                 <section id="main-content">
                     <section className="wrapper">
                         <div className="container ">
+                            <center> <div className="page-header">
+                                <h1 style={{ fontFamily: ' time new roman' }}> {post.event_name} </h1>
+                            </div></center>
                             <div className="row">
                                 <div className="  col-sm-3  "></div>
                                 <div className="col-md-7">
-                                    <div className="page-header">
-                                        <h1>Post's detail </h1>
-                                    </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>User name:</h3>
@@ -64,14 +52,7 @@ export default class showPost extends Component {
                                             <h3> </h3>
                                         </div>
                                     </div>
-                                    <div className="row">
-                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
-                                            <h3> Event name</h3>
-                                        </div>
-                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3 className="form-control-static"> {post.event_name}</h3>
-                                        </div>
-                                    </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Image</h3>
@@ -114,7 +95,7 @@ export default class showPost extends Component {
                                             </Link>
                                         </div>
                                         <div className="  col-sm-2 ">
-                                            <Link  to={`/post/${post.id}/edit`}>
+                                            <Link to={`/post/${post.id}/edit`}>
                                                 <button className="btn btn-success btn-lg btn-block" type="button" value="Reset"> <span
                                                     className="glyphicon glyphicon-edit">Edit</span></button>
                                             </Link>
@@ -123,15 +104,25 @@ export default class showPost extends Component {
                                 </div>
                                 <div className="  col-sm-1  "></div>
                             </div>
-
-
                         </div>
-
-
                     </section>
-
                 </section>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        post: state.post
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onReadPost: (id) => {
+            dispatch(actions.actReadPostRequest(id));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(showPost);

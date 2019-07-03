@@ -5,51 +5,21 @@ import Thumbanail from './thumbanail';
 import Control from './../layout/control';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import callApi from './../../utils/apiCaller';
-import  {actFetchPostsRequest}  from './../../actions/index';
+import * as actions from './../../actions/index';
 
 class indexPost extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
-        };
-    }
 
     componentDidMount() {
         this.props.fetchAllPosts();
     }
 
     onDelete = (id) => {
-        var { posts } = this.state;
-        callApi(`posts/${id}`, 'DELETE', null).then(res => {
-            if (res.status === 200) {
-                var index = this.findIndex(id);
-                if (index !== -1) {
-                    posts.splice(index, 1);
-                    this.setState({
-                        posts: posts
-                    });
-                }
-            }
-        });
-    }
-
-    findIndex = (id) => {
-        var { posts } = this.state;
-        var result = -1;
-        posts.forEach((post, index) => {
-            if (post.id === id) {
-                result = index;
-            }
-        });
-        return result;
+        this.props.onDeletePost(id);
     }
 
     render() {
 
         var { posts } = this.props;
-        //var { posts } = this.state;
 
         var results = posts.map((post, index) => {
             var result = null;
@@ -60,7 +30,6 @@ class indexPost extends Component {
             return result;
         });
 
-
         return (
 
             <div>
@@ -70,11 +39,9 @@ class indexPost extends Component {
                 </section>
                 <section id="main-content">
                     <section className="wrapper">
-
                         <center>
                             <h1>List of Posts</h1>
                         </center><br />
-
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <Link to="/addPost">
@@ -82,18 +49,14 @@ class indexPost extends Component {
 
                                 </Link>
                             </div>
-
                             <div className="col-xs-11 col-sm-11 col-md-11 col-lg-8">
                                 <Control />
                             </div>
                         </div>
-
                         <div className="row">
                             {results}
                         </div>
-
                     </section>
-
                 </section>
             </div>
         );
@@ -109,7 +72,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, props) => {
     return {
         fetchAllPosts: () => {
-            dispatch(actFetchPostsRequest());
+            dispatch(actions.actFetchPostsRequest());
+        },
+        onDeletePost: (id) => {
+            dispatch(actions.actDeletePostRequest(id));
         }
     }
 }
