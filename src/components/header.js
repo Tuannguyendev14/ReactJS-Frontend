@@ -6,14 +6,12 @@ export default class Header extends Component {
 	render() {
 		return (
 			<div>
-
 				{/* Header section */}
 				<header className="header-section">
 					<div className="header-top">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-2 text-center text-lg-left">
-
 									<a href="./index.html" className="site-logo">
 										<img src="img/logo3.jpg" alt="ok" />
 									</a>
@@ -21,18 +19,21 @@ export default class Header extends Component {
 								<div className="col-xl-6 col-lg-5">
 									<form className="header-search-form">
 										<input type="text" placeholder="Da Nang Volunteering ...." />
-										<button><i className="flaticon-search" /></button>
+										<button><i className="glyphicon glyphicon-search" /></button>
 									</form>
 								</div>
 								<div className="col-xl-4 col-lg-5">
-									<div className="user-panel">
+									<div className="user-panel" style={{
+										marginTop: '11px',
+										marginLeft: '22px'
+									}}>
 										<div className="up-item">
-											<i className="flaticon-profile" />
+											<i className=" glyphicon glyphicon-log-in" />
 											<a href="/login" style={{ fontSize: '20px' }}> Sign In </a>
 										</div>
 										<div className="up-item">
 											<div className="shopping-card">
-												<i className="flaticon-profile" />
+												<i className="glyphicon glyphicon-log-out" />
 											</div>
 											<a href="/signup" style={{ fontSize: '20px' }}>Log out</a>
 										</div>
@@ -44,7 +45,6 @@ export default class Header extends Component {
 					<nav className="main-navbar">
 						<div className="container">
 							{/* menu */}
-
 							<ul className="main-menu">
 								<li> <Link to="/" className="nav-link">Home</Link> </li>
 								<li><Link to="/footer" className="nav-link"> About us</Link></li>
@@ -71,8 +71,6 @@ export default class Header extends Component {
 										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>
 										<li><a href="./category.html">Log out Page</a></li>
 										<li><Link to="/join" className="nav-link">Join us</Link> </li>
-
-
 									</ul>
 								</li>
 							</ul>

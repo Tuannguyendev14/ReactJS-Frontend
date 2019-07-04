@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export default class Header extends Component {
-
     render() {
         return (
             <div>
@@ -16,7 +15,6 @@ export default class Header extends Component {
                                 <div className="footer-widget contact-widget">
                                     <h2>About us</h2>
                                     <div className="con-info">
-
                                         <p>Da Nang Volunteering </p>
                                     </div>
                                     <div className="con-info">
@@ -44,7 +42,6 @@ export default class Header extends Component {
                                         <li><a href="/fff">Shipping</a></li>
                                         <li><a href="/fff" >Blog</a></li>
                                     </ul>
-
                                 </div>
                             </div>
                             <div className="col-lg-3 col-sm-6">
@@ -61,11 +58,8 @@ export default class Header extends Component {
                                         <span>Oct 21, 2018</span>
                                                     <a href="/fff" className="readmore">Read More</a>
                                                 </p>
-
                                             </div>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -103,14 +97,11 @@ export default class Header extends Component {
                                 <a href="/kk" className="youtube"><i className="fa fa-youtube" /><span>youtube</span></a>
                                 <a href="/kk" className="tumblr"><i className="fa fa-tumblr-square" /><span>tumblr</span></a>
                             </div>
-                            {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                            <p className="text-white text-center mt-5">Copyright © All rights reserved | This template is made with
-                    <i className="fa fa-heart-o" aria-hidden="true" /> by <a href="/ll">Colorlib</a></p>
-                            {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
+                            <p className="text-white text-center mt-5">Created by Nguyen Huu Tuan | Student at Passerelles Numeriques Viet Nam
+                    <i className="fa fa-heart-o" aria-hidden="true" />   </p>
                         </div>
                     </div>
                 </section>
-                {/* Footer section end */}
             </div>
         );
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
 import Thumbanail from './thumbanail';
@@ -42,15 +42,9 @@ class indexPost extends Component {
 
         if (filter.name) {
             posts = posts.filter((post) => {
-                return post.event_name.toLowerCase().indexOf(filter.event_name) !== -1;
+                return post.event_name.toLowerCase().indexOf(filter.name) !== -1;
             });
-            console.log(posts);
-
         }
-
-
-
-
 
         var results = posts.map((post, index) => {
             var result = null;
@@ -63,7 +57,7 @@ class indexPost extends Component {
 
         return (
 
-            <div>
+            <Fragment>
                 <section id="container">
                     <Header />
                     <Aside />
@@ -80,9 +74,9 @@ class indexPost extends Component {
                                 </Link>
                             </div>
                             <div className="col-xs-11 col-sm-11 col-md-11 col-lg-8">
-                                <input type="text" className="form-control my-filter" name="filterName" placeholder="Filter ...."
+                                <input type="text" className="form-control  " placeholder="Filter ...."
                                     style={{ borderRadius: '18px', background: '#f0f0f0', fontSize: '20px' }}
-                                    value={this.state.filterName} onChange={this.onChange}
+                                    value={this.state.filterName} onChange={this.onChange} name="filterName"
                                 />
                             </div>
                         </div>
@@ -91,7 +85,7 @@ class indexPost extends Component {
                         </div>
                     </section>
                 </section>
-            </div>
+            </Fragment>
         );
     }
 }

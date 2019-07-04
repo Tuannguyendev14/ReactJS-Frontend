@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 export default class Thumbanail extends Component {
 
     onDelete = (id) => {
-        if(confirm('Are you sure to delete ?')){ //eslint-disable-line
-           this.props.onDelete(id);
+        var { post } = this.props;
+        if (confirm('Are you sure to delete ?')) { //eslint-disable-line
+            this.props.onDelete(id);
+            alert(post.event_name + ' has successfully been deleted');
         }
     }
+
     render() {
         var { post } = this.props;
-        
+
         return (
-            <div className="col-md-6 col-lg-4 my-padding-bottom-19 my-filter-object my-booking-purpose">
+            <div className="col-md-6 col-lg-4 my-padding-bottom-19   ">
                 <div className="my-frame">
-                    <div className="my-padding-bottom-12 my-filter-target">
+                    <div className="my-padding-bottom-12  ">
                         <h2 className="mr-bot">{post.event_name}</h2>
                     </div>
                     <div className="d-flex flex-wrap">
@@ -43,6 +44,4 @@ export default class Thumbanail extends Component {
             </div>
         );
     }
-
-
 }

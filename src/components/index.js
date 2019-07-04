@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import Header from './header';
 import Slide from './slide';
 import Caption from './caption';
@@ -12,8 +12,8 @@ export default class Index extends Component {
 
 	render() {
 		return (
-			<div>
- 				<Header />
+			<Fragment>
+				<Header />
 				<Slide />
 				<Caption />
 
@@ -23,14 +23,14 @@ export default class Index extends Component {
 							<Content />
 						</div>
 					</div>
-					 
+
 				</div>
 
-				<br/><br/>
-			 
+				<br /><br />
+
 
 				<Footer />
-			</div>
+			</Fragment>
 		);
 	}
 

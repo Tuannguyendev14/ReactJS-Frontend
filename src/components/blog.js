@@ -4,7 +4,7 @@ export default class Blog extends Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div className="latest-news-wrap">
                         <div className="news-img">
@@ -67,7 +67,7 @@ export default class Blog extends Component {
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
-                            <img src="img/blogs/tnh5.jpg" className="img-responsive" alt="ok"/>
+                            <img src="img/blogs/tnh5.jpg" className="img-responsive" alt="ok" />
 
                             <div className="deat">
                                 <span>31</span>
@@ -93,7 +93,7 @@ export default class Blog extends Component {
                     </div>
                 </div>
 
-            </div>
+            </React.Fragment>
 
         );
     }
