@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Aside from './../layout/aside';
 import Header from './../layout/header'
-import Slide from './../../components/slide';
+import Slide from './../../components/Layouts/slide';
 
 
 export default class indexTrip extends Component {

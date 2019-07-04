@@ -29,7 +29,7 @@ class showPost extends Component {
                     <section className="wrapper">
                         <div className="container ">
                             <center> <div className="page-header">
-                                <h1 style={{ fontFamily: ' time new roman' }}> {post.event_name} </h1>
+                                <h1 style={{ fontFamily: ' time new roman' , color:'blue'}}> {post.event_name} </h1>
                             </div></center>
                             <div className="row">
                                 <div className="  col-sm-3  "></div>

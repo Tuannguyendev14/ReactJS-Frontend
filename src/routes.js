@@ -1,12 +1,11 @@
 import React from 'react';
  
-import Index from './components/index';
-import Footer from './components/footer';
-import PostStatus from './components/postStatus';
-import Join from './components/join';
-import Login from './components/login';
-import Signup from './components/signup';
-import Detail from './components/detail';
+import Index from './components/Homepage/index';
+import PostStatus from './components/PostStatusPage/postStatus';
+import Join from './components/JoinPage/join';
+import Login from './components/LoginPage/login';
+import Signup from './components/SignUp/signup';
+import Detail from './components/DetailPage/detail';
 import Admin from './admin/homepage/admin';
 import AddPost from './admin/posts/add';
 import IndexPost from './admin/posts/index';
@@ -22,11 +21,6 @@ const routes=[
         path:'/',
         exact:true,
         main: () => <Index/>
-    },
-    {
-        path:'/footer',
-        exact:false,
-        main: () => <Footer/>
     },
     {
         path:'/poststatus',

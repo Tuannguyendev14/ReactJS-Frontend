@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import callApi from './../utils/apiCaller';
+import callApi from './../../utils/apiCaller';
  
 
 export default class FormPost extends Component {

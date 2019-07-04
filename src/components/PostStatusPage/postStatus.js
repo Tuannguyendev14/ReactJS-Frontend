@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Header from './header';
-import Footer from './footer';
+import Header from './../Layouts/header';
+import Footer from './../Layouts/footer';
 import FormPost from './formPost';
 
 export default class PostStatus extends Component {
