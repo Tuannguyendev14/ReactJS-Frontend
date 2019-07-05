@@ -3,14 +3,14 @@ import postEditting from './edit';
 import post from './read';
 import filter from './filter_post';
 import { combineReducers } from 'redux';
-
  
+
 
 const myReducer = combineReducers({
     posts,
     postEditting,
     post,
-    filter
+    filter 
 });
 
 export default myReducer;

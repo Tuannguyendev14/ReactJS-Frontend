@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
 
+	logout=()=>{
+		this.props.logout();
+	}
+
 	render() {
 		return (
 			<div>
@@ -35,7 +39,7 @@ export default class Header extends Component {
 											<div className="shopping-card">
 												<i className="glyphicon glyphicon-log-out" />
 											</div>
-											<a href="/signup" style={{ fontSize: '20px' }}>Log out</a>
+											<a href="/signup" style={{ fontSize: '20px' }} onClick={this.logout}>Log out</a>
 										</div>
 									</div>
 								</div>

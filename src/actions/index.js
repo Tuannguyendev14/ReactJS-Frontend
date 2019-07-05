@@ -1,5 +1,6 @@
 import * as types from './../constants/actionTypes';
 import callApi from './../utils/apiCaller';
+ 
 
 export const actFetchPostsRequest = () => {
     return (dispatch) => {
@@ -84,8 +85,6 @@ export const actReadPostRequest = (id) => {
         });
     };
 }
-
- 
 
 export const actReadPost = (post) => {
     return {

@@ -4,12 +4,18 @@ import Slide    from   './../Layouts/slide'  ;
 import Caption  from   './../Layouts/caption';
 import Footer   from   './../Layouts/footer' ;
 import Content  from   './../Layouts/content';
+import fire from '../../Config/fire';
 
 export default class Index extends Component {
+
+	logout=()=>{
+		fire.auth().signOut();
+	}
+
 	render() {
 		return (
 			<Fragment>
-				<Header />
+				<Header logout={this.logout} />
 				<Slide />
 				<Caption />
 				<div className="row" >
