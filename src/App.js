@@ -51,7 +51,7 @@ class App extends Component {
             <div>
                 <BrowserRouter>
                     <Switch>
-                        {user ? (<Index />) : (<Login />)}
+                        {/* {user ? (<Index />) : (<Login />)} */}
                         {this.showContentMenu(routes)}
                     </Switch>
                 </BrowserRouter>

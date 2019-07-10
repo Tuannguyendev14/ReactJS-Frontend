@@ -41,7 +41,7 @@ export default class Header extends Component {
                             <img src="img/blogs/ttn.jpg" className="img-responsive" alt="ok" />
                         </div>
                         <div className="  col-xs-12 col-sm-12 col-md-5 col-lg-4 news-content ">
-                            <br /><br />
+                             
                             <h2 style={{ color: 'black', fontWeight: 'bold' }}>  KÊU GỌI ỦNG HỘ TẾT THIẾU NHI 01/06 </h2>
                             <br /><br />
                             <p style={{ color: '#4d4748' }}> + 🏵Một năm có 365 ngày, duy chỉ có một ngày gọi là TẾT của thiếu

@@ -5,6 +5,7 @@ import Thumbanail from './thumbanail';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
+import { Pagination } from 'react-router-redux';
 
 class indexPost extends Component {
 
@@ -55,6 +56,7 @@ class indexPost extends Component {
             return result;
         });
 
+        let number = ['1', '2', '3', '4', '5'];
         return (
 
             <Fragment>
@@ -83,7 +85,11 @@ class indexPost extends Component {
                         <div className="row">
                             {results}
                         </div>
+
                     </section>
+                    <Pagination>
+
+                    </Pagination>
                 </section>
             </Fragment>
         );

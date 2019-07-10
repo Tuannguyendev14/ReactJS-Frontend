@@ -15,7 +15,7 @@ export default class Thumbanail extends Component {
         var { post } = this.props;
 
         return (
-            <div className="col-md-6 col-lg-4 my-padding-bottom-19   ">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-4 my-padding-bottom-19   ">
                 <div className="my-frame">
                     <div className="my-padding-bottom-12  ">
                         <h2 className="mr-bot">{post.event_name}</h2>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Prompt } from 'react-router-dom';
 import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
 
@@ -7,6 +7,7 @@ class FormPost extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isBlocking : false,
             id: '',
             user_name: '',
             phone_number: '',
@@ -23,9 +24,9 @@ class FormPost extends Component {
         var target = event.target;
         var name = target.name;
         var value = target.type === 'checkbox' ? target.checked : target.value;
-
         this.setState({
-            [name]: value
+            [name]: value,
+            isBlocking: event.target.value.length > 0
         });
     }
 
@@ -78,6 +79,7 @@ class FormPost extends Component {
     render() {
         return (
             <div className='row'>
+            <Prompt when={this.state.isBlocking} message={location=>('Are you sure to move to other page')}/>
                 <div className="col-xs-0 col-sm-0 col-md-0 col-lg-3"> </div>
                 <div className="col-xs-12 col-sm-12 col-md-6 col-lg-7 contact-section contact-info">
                     <h3>Post your event</h3>

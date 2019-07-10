@@ -1,5 +1,5 @@
 import * as types from './../constants/actionTypes';
-import callApi from './../utils/apiCaller';
+import callApi from './../utils/apicaller';
  
 
 export const actFetchPostsRequest = () => {
