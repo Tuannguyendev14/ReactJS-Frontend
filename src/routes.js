@@ -2,7 +2,6 @@ import React from 'react';
  
 import Index from './components/Homepage/index';
 import PostStatus from './components/PostStatusPage/postStatus';
-import Join from './components/JoinPage/join';
 import Login from './components/LoginPage/login';
 import Signup from './components/SignUp/signup';
 import Detail from './components/DetailPage/detail';
@@ -14,6 +13,8 @@ import IndexUsers from './admin/users/index';
 import ShowUser from './admin/users/show';
 import AddUser from './admin/users/add';
 import NotFound from './components/NotFound';
+import Feedback from './components/FeedbackPage/feedback';
+import IndexFeed from './admin/feedbacks/index';
 
  
 const routes=[
@@ -28,9 +29,14 @@ const routes=[
         main: () => <PostStatus/>
     },
     {
-        path:'/join',
+        path:'/feedback',
         exact:false,
-        main: () => <Join/>
+        main: () => <Feedback/>
+    },
+    {
+        path:'/feedbacks',
+        exact:false,
+        main: () => <IndexFeed/>
     },
     {
         path:'/login',

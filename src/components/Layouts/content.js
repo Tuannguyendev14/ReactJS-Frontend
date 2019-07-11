@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import Blog from './blog';
 import Horizontal from './horizontal';
-export default class Header extends Component {
-
+import { connect } from 'react-redux';
+import * as actions from './../../actions/index'
+;
+class Content extends Component {
+    componentDidMount() {
+        this.props.fetchAllPosts();
+    }
     render() {
+        var { posts  } = this.props;
+        var results = posts.map((post, index) => {
+            var result = null;
+            if (posts.length > 0) {
+                result = <Blog key={index} index={index}
+                    post={post} onDelete={this.onDelete} />
+            }
+            return result;
+        }); 
+
         return (
             <div>
-
-
                 <section className="latest-news-area" id="latest">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div className="section_title">
-
                                 <h2>Recent <strong>Blogs</strong></h2>
                             </div>
                         </div>
@@ -20,7 +32,7 @@ export default class Header extends Component {
 
                     <div className="row">
                         <div className="news_active">
-                            <Blog />
+                        {results}
                         </div>
                     </div>
                 </section>
@@ -137,3 +149,19 @@ export default class Header extends Component {
         );
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        posts: state.posts
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        fetchAllPosts: () => {
+            dispatch(actions.actFetchPostsRequest());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

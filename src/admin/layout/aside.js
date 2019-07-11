@@ -19,7 +19,7 @@ export default class Aside extends Component {
                             </Link>
                         </li>
                         <li className='sub-menu'>
-                            <Link to='/dsfffwef' className="my-link">
+                            <Link to='/feedbacks' className="my-link">
                                 <span> Manage Feedback</span>
                             </Link>
                         </li>

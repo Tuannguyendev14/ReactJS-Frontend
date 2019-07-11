@@ -3,9 +3,32 @@ import React, { Component } from 'react';
 export default class Blog extends Component {
 
     render() {
+        var { post } = this.props;
         return (
             <React.Fragment>
                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div className="latest-news-wrap">
+                        <div className="news-img">
+
+                            <img src= {post.event_image} className="img-responsive" alt="ok" />
+                            <div className="deat">
+                                <span>{post.time}</span>
+                                
+                            </div>
+                        </div>
+                        <div className="news-content">
+                            <i className="fa fa-facebook"></i>
+                            <i className="fa fa-twitter"></i>
+                            <i className="fa fa-linkedin"></i>
+                            <i className="fa fa-youtube"></i>
+                            <i className="fa fa-whatsapp"></i>
+                            <p> {post.description} </p><br />
+                            <a href="/kkk">Read more...</a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
@@ -91,7 +114,7 @@ export default class Blog extends Component {
                             <a href="/ll">Read more...</a>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </React.Fragment>
 

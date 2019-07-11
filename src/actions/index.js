@@ -27,7 +27,7 @@ export const actDeletePostRequest = (id) => {
 
 export const actDeletePost = (id) => {
     return {
-        type: types.DELETE_POST,
+        type: types.DELETE_POST, 
         id
     }
 }
@@ -97,5 +97,50 @@ export const filterPost = (filter)=>{
     return {
         type: types.FILTER_POST,
         filter
+    }
+}
+
+export const actAddFeedbackRequest = (feedback) => {
+    return dispatch => {
+        return callApi('feedbacks', 'POST', feedback).then(res => {
+            dispatch(actAddFeedback(res.data));
+        });
+    };
+}
+
+export const actAddFeedback = (feedbacks) => {
+    return {
+        type: types.ADD_FEEDBACK,
+        feedbacks
+    }
+}
+
+export const actFetchFeedbackRequest = () => {
+    return (dispatch) => {
+        return callApi('feedbacks', 'GET', null).then(res => {
+            dispatch(actFetchFeedback(res.data));
+        });
+    };
+}
+
+export const actFetchFeedback = (feedbacks) => {
+    return {
+        type: types.FETCH_FEEDBACKS,
+        feedbacks
+    }
+}
+
+export const actDeleteFeedbackRequest = (id) => {
+    return dispatch => {
+        return callApi(`feedbacks/${id}`, 'DELETE', null).then(res => {
+            dispatch(actDeleteFeedback(id));
+        });
+    };
+}
+
+export const actDeleteFeedback = (id) => {
+    return {
+        type: types.DELETE_FEEDBACKS,
+        id
     }
 }

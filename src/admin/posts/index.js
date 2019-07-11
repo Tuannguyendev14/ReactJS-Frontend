@@ -5,10 +5,11 @@ import Thumbanail from './thumbanail';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
-import { Pagination } from 'react-router-redux';
+
+
 
 class indexPost extends Component {
-
+   
     constructor(props) {
         super(props);
         this.state = {
@@ -38,7 +39,6 @@ class indexPost extends Component {
     }
 
     render() {
-
         var { posts, filter } = this.props;
 
         if (filter.name) {
@@ -56,9 +56,8 @@ class indexPost extends Component {
             return result;
         });
 
-        let number = ['1', '2', '3', '4', '5'];
+         
         return (
-
             <Fragment>
                 <section id="container">
                     <Header />
@@ -87,9 +86,7 @@ class indexPost extends Component {
                         </div>
 
                     </section>
-                    <Pagination>
-
-                    </Pagination>
+                    
                 </section>
             </Fragment>
         );

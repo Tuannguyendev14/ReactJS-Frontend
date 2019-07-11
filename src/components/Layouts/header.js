@@ -74,7 +74,7 @@ export default class Header extends Component {
 										<li><a href="./product.html">Profile</a></li>
 										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>
 										<li><a href="./category.html">Log out Page</a></li>
-										<li><Link to="/join" className="nav-link">Join us</Link> </li>
+										<li><Link to="/feedback" className="nav-link">Contact us</Link> </li>
 									</ul>
 								</li>
 							</ul>

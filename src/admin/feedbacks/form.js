@@ -13,7 +13,6 @@ class FormPost extends Component {
             phone_number: '',
             event_name: '',
             event_image: '',
-            time : '',
             nu_participant: '',
             venue: '',
             description: ''
@@ -34,14 +33,13 @@ class FormPost extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         var { history } = this.props;
-        var { id, user_name, phone_number, event_name, event_image,time, nu_participant, venue, description } = this.state;
+        var { id, user_name, phone_number, event_name, event_image, nu_participant, venue, description } = this.state;
         var post = {
             id : id,
             user_name: user_name,
             phone_number: phone_number,
             event_name: event_name,
             event_image: event_image,
-            time : time,
             nu_participant: nu_participant,
             venue: venue,
             description: description
@@ -71,7 +69,6 @@ class FormPost extends Component {
                 phone_number : nextProps.postEditting.phone_number,  
                 event_name : nextProps.postEditting.event_name,  
                 event_image : nextProps.postEditting.event_image,  
-                time : nextProps.postEditting.time,  
                 nu_participant : nextProps.postEditting.nu_participant,  
                 venue : nextProps.postEditting.venue , 
                 description : nextProps.postEditting.description  
@@ -91,18 +88,13 @@ class FormPost extends Component {
                         <input type="number" placeholder="Your phone number" name="phone_number" value={this.state.phone_number} onChange={this.onChange} required/>
                         <input type="text" placeholder="Event's name" name="event_name" value={this.state.event_name} onChange={this.onChange} required/>
                         <input type="text" placeholder="Event's image" name="event_image" value={this.state.event_image} onChange={this.onChange} required/>
-                        <input type="date" placeholder="Time"  name="time" id="input" class="form-control" value={this.state.time} onChange={this.onChange} required="required" />
                         <input type="number" placeholder="Number of participants" name="nu_participant" value={this.state.nu_participant} onChange={this.onChange} required/>
-                        <input type="text " placeholder="Venue name" name="venue" value={this.state.venue} onChange={this.onChange} required />
-                         
-                         <textarea  placeholder="Description" name="description"  onChange={this.onChange} value={this.state.description} rows="3" required="required"></textarea>
-                         
+                        <input type="text " placeholder="Venue name" name="venue" value={this.state.venue} onChange={this.onChange} required/>
+                        <textarea placeholder="Description" name="description" value={this.state.description} onChange={this.onChange} required/>
                         <center>
                             <Link to="/posts" > <button style={{ marginLeft: '-125px' }} type="button" className="site-btn">Back</button></Link>
                             <button style={{ marginLeft: '40px' }} type="submit" className="site-btn">Post now</button>
                         </center>
-                        
-                        
                     </form>
                 </div>
                 <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2"> </div>
