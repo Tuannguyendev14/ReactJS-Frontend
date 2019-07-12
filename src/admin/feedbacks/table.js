@@ -20,9 +20,13 @@ export default class Table extends Component {
                 <td>{feedback.user_name}</td>
                 <td>{feedback.email}</td>
                 <td scope="col">{feedback.subject}</td>
-                <td scope="col-">{feedback.message}</td>
+
                 <td className="text-center">
-                    <button type="button" className="btn btn-danger btn-xs"  onClick={() => this.onDelete(feedback.id)} >    Delete </button>
+                    <Link to={`/showFeed/${feedback.id}`}>
+                        <button type="button" className="btn btn-success btn-xs" style={{marginRight: '16px'}}><span
+                            className="glyphicon glyphicon-eye-open">Detail</span></button>
+                    </Link>
+                    <button type="button" className="btn btn-danger btn-xs" onClick={() => this.onDelete(feedback.id)} >    Delete </button>
 
                 </td>
             </tr>

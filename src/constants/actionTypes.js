@@ -8,4 +8,5 @@ export const FILTER_POST  = 'FILTER_POST';
 export const ADD_FEEDBACK = 'ADD_FEEDBACK';
 export const FETCH_FEEDBACKS = 'FETCH_FEEDBACKS';
 export const DELETE_FEEDBACKS = 'DELETE_FEEDBACKS';
+export const READ_FEEDBACK = 'READ_FEEDBACK';
 

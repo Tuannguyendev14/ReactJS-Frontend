@@ -74,7 +74,6 @@ class indexFeedback extends Component {
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Subject</th>
-                                                <th scope="col">Message</th>
                                                 <th scope="col">Tool</th>
                                             </tr>
                                         </thead>

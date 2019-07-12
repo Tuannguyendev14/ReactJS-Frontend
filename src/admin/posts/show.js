@@ -63,10 +63,34 @@ class showPost extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
-                                            <h3>Time</h3>
+                                            <h3>Start day</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3> {post.time}</h3>
+                                            <h3> {post.startDay}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+                                            <h3>Start time</h3>
+                                        </div>
+                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                                            <h3> {post.startTime}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+                                            <h3>End day</h3>
+                                        </div>
+                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                                            <h3> {post.endDay}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+                                            <h3>End time</h3>
+                                        </div>
+                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                                            <h3> {post.endTime}</h3>
                                         </div>
                                     </div>
                                     <div className="row">

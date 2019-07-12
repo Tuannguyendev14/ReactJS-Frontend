@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
 
-	logout=()=>{
+	logout = () => {
 		this.props.logout();
 	}
 
@@ -16,7 +16,7 @@ export default class Header extends Component {
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-2 text-center text-lg-left">
-									<a href="./index.html" className="site-logo">
+									<a href="./index" className="site-logo">
 										<img src="img/logo3.jpg" alt="ok" />
 									</a>
 								</div>
@@ -51,7 +51,7 @@ export default class Header extends Component {
 							{/* menu */}
 							<ul className="main-menu">
 								<li> <Link to="/" className="nav-link">Home</Link> </li>
-								<li><Link to="/footer" className="nav-link"> About us</Link></li>
+								<li><Link to="/feedback" className="nav-link"> About us</Link></li>
 								<li><a href="/ewrw">Event</a>
 									<ul className="sub-menu">
 										<li><a href="/ffwef">Donate Clother</a></li>

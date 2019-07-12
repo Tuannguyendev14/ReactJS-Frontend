@@ -2,91 +2,121 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './../Layouts/header';
 import Footer from './../Layouts/footer';
+import { connect } from 'react-redux';
+import * as actions from './../../actions/index';
 
-export default class Detail extends Component {
+class Detail extends Component {
+
+    componentDidMount() {
+        var { match } = this.props;
+        if (match) {
+            var id = match.params.id;
+            this.props.onReadPost(id);
+            console.log('ok');
+        }
+    }
 
     render() {
+        var { post } = this.props;
         return (
             <div>
                 <Header />
                 {/* Page info */}
                 <div className="page-top-info">
                     <div className="container">
-                        <h4>Category PAge</h4>
-                        <div className="site-pagination">
-                            <a href>Home</a> /
-              <a href>Shop</a>
-                        </div>
+                        <center>
+                            <h1> {post.event_name}  </h1>
+                        </center>
                     </div>
                 </div>
-                
                 <section className="product-section">
-                    <div className="container">
-                         
-                        <div className="row">
-                            <div className="col-lg-6">
-                                <div className="product-pic-zoom">
-                                    <img className="product-big-img" style={{width:'600px'}} src="img/tenan/lulut.jfif" alt="ok" />
-                                </div>
-                                <div className="panel">
-                                        
-                                        <div id="collapse1" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                            <div className="panel-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
-                                                <p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
-                                                <p>Mixed fibres</p>
-                                                <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div className="col-lg-6 product-details">
-                                <h2 className="p-title">Xóa đói giảm nghèo tại Đà Nẵng</h2>
-                                <h3 className="p-price">29-06-2019</h3>
-                                <h4 className="p-stock">Time : <span>08:00 AM -> 17:00 PM</span></h4>
-                                 
-                                
-                                <Link to="/join" className="site-btn">JOIN NOW</Link>
-                                <div id="accordion" className="accordion-area">
-                                    
-                                    <div className="panel">
-                                        <div className="panel-header" id="headingTwo">
-                                            <button className="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Sponsors </button>
-                                        </div>
-                                        <div id="collapse2" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                            <div className="panel-body">
-                                                <img src="./img/cards.png" alt="ok" />
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="panel">
-                                        <div className="panel-header" id="headingThree">
-                                            <button className="panel-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Members</button>
-                                        </div>
-                                        <div id="collapse3" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                            <div className="panel-body">
-                                                <h4>7 Days Returns</h4>
-                                                <p>Cash on Delivery Available<br />Home Delivery <span>3 - 4 days</span></p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="social-sharing">
-                                    <a href><i className="fa fa-google-plus" /></a>
-                                    <a href><i className="fa fa-pinterest" /></a>
-                                    <a href><i className="fa fa-facebook" /></a>
-                                    <a href><i className="fa fa-twitter" /></a>
-                                    <a href><i className="fa fa-youtube" /></a>
-                                </div>
+                    <div className="row">
+                        <div class="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                            <div className="product-pic-zoom">
+                                <img className="product-big-img" style={{ width: '600px' }} src={post.event_image} alt="ok" />
                             </div>
                         </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5  product-details  ">
+                            <h1 className="p-title"></h1>
+                            <h3 className="p-price">{post.startDay} -> {post.endDay}</h3>
+                            <h4 className="p-stock">Time : <span>{post.startTime} -> {post.endTime}</span></h4>
+                            <div id="accordion" className="accordion-area">
+                                <div className="panel">
+                                    <div className="panel-header" id="headingOne">
+                                        <button className="panel-link" data-toggle="collapse" data-target="#collapse1"
+                                            aria-expanded="false" aria-controls="collapse1">Sponsors </button>
+                                    </div>
+                                    <div id="collapse1" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div className="panel-body">
+                                            <img src="./img/cards.png" alt="ok" />
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so
+                                                dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus.
+                                        Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="panel">
+                                    <div className="panel-header" id="headingTwo">
+                                        <button className="panel-link" data-toggle="collapse" data-target="#collapse2"
+                                            aria-expanded="false" aria-controls="collapse2">Sponsors </button>
+                                    </div>
+                                    <div id="collapse2" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div className="panel-body">
+                                            <img src="./img/cards.png" alt="ok" />
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so
+                                                dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus.
+                                        Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="panel">
+                                    <div className="panel-header" id="headingThree">
+                                        <button className="panel-link" data-toggle="collapse" data-target="#collapse3"
+                                            aria-expanded="false" aria-controls="collapse3">Description</button>
+                                    </div>
+                                    <div id="collapse3" className="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div className="panel-body">
+                                            <h2> Event's description </h2><br/>
+                                            <h4>{post.description}</h4>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="news-content">
+                                <i className="fa fa-facebook"></i>
+                                <i className="fa fa-twitter"></i>
+                                <i className="fa fa-linkedin"></i>
+                                <i className="fa fa-youtube"></i>
+                                <i className="fa fa-whatsapp"></i>
+                                <Link to="/join" className="site-btn" style={{ marginLeft: '20px' }}>JOIN NOW</Link>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
-                 
                 <Footer />
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        post: state.post
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onReadPost: (id) => {
+            dispatch(actions.actReadPostRequest(id));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

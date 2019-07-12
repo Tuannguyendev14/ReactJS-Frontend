@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Blog extends Component {
 
@@ -10,10 +11,10 @@ export default class Blog extends Component {
                     <div className="latest-news-wrap">
                         <div className="news-img">
 
-                            <img src= {post.event_image} className="img-responsive" alt="ok" />
+                            <img src={post.event_image} className="img-responsive" alt="ok" style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
                                 <span>{post.time}</span>
-                                
+
                             </div>
                         </div>
                         <div className="news-content">
@@ -23,7 +24,8 @@ export default class Blog extends Component {
                             <i className="fa fa-youtube"></i>
                             <i className="fa fa-whatsapp"></i>
                             <p> {post.description} </p><br />
-                            <a href="/kkk">Read more...</a>
+                            <Link to={`/detail/${post.id}`}>Read more ...</Link> 
+
                         </div>
                     </div>
                 </div>

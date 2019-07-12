@@ -16,21 +16,21 @@ export default class Slide extends Component {
                     <div className="carousel-item active">
                         <img className="d-block w-100" src=" https://fortunedotcom.files.wordpress.com/2017/02/intuit-volunteers.jpg" alt="First slide" />
                         <div className="carousel-caption d-none d-md-block">
-                            <h1>LET JOIN HAND TOGETHER</h1>
+                            <h1>LET'S JOIN HAND TOGETHER</h1>
                             <h2>TO END EXTRIME POVERTY</h2>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src=" https://fortunedotcom.files.wordpress.com/2015/03/nustar-energy-2.jpg" alt="Second slide" />
                         <div className="carousel-caption d-none d-md-block">
-                            <h1>LET JOIN HAND TOGETHER</h1>
+                            <h1>LET'S JOIN HAND TOGETHER</h1>
                             <h2>TO END EXTRIME POVERTY</h2>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="http://www.wastatepta.org/wp-content/uploads/2016/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium.jpg " alt="Third slide" />
                         <div className="carousel-caption d-none d-md-block">
-                            <h1>LET JOIN HAND TOGETHER</h1>
+                            <h1>LET'S JOIN HAND TOGETHER</h1>
                             <h2>TO END EXTRIME POVERTY</h2>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ export default class Slide extends Component {
                     <div className="carousel-item">
                         <img className="d-block w-100" src="https://static1.squarespace.com/static/5c12b3915417fc6974991ae4/t/5c3760f6aa4a99740a740658/1547133181730/Root-Cause-volunteers.jpg" alt="Third slide" />                        
                             <div className="carousel-caption d-none d-md-block">
-                                <h1>LET JOIN HAND TOGETHER</h1>
+                                <h1>LET'S JOIN HAND TOGETHER</h1>
                                 <h2>TO END EXTRIME POVERTY</h2>
                             </div>
                     </div>

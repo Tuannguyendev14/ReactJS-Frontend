@@ -144,3 +144,18 @@ export const actDeleteFeedback = (id) => {
         id
     }
 }
+
+export const actReadFeedbackRequest = (id) => {
+    return dispatch => {
+        return callApi(`feedbacks/${id}`, 'GET', null).then(res => {
+            dispatch(actReadFeedback(res.data));
+        });
+    };
+}
+
+export const actReadFeedback = (feedback) => {
+    return {
+        type: types.READ_FEEDBACK,
+        feedback
+    }
+}

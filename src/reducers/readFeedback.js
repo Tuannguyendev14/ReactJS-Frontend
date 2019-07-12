@@ -2,11 +2,11 @@ import * as types from './../constants/actionTypes'
 
 var initialState = {};
 
-var post = (state = initialState, action) => {
+var feedback = (state = initialState, action) => {
     switch (action.type) {
-        case types.READ_POST:
-            return action.post;
+        case types.READ_FEEDBACK:
+            return action.feedback;
         default: return  state ;
     }
 }
-export default post;
+export default feedback;

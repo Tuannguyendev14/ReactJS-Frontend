@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Blog from './blog';
 import Horizontal from './horizontal';
 import { connect } from 'react-redux';
-import * as actions from './../../actions/index'
-;
+import * as actions from './../../actions/index';
 class Content extends Component {
     componentDidMount() {
         this.props.fetchAllPosts();
@@ -17,7 +16,7 @@ class Content extends Component {
                     post={post} onDelete={this.onDelete} />
             }
             return result;
-        }); 
+        }).slice(0,3); 
 
         return (
             <div>
@@ -146,7 +145,7 @@ class Content extends Component {
 
             </div>
 
-        );
+                        );
     }
 }
 

@@ -15,6 +15,7 @@ import AddUser from './admin/users/add';
 import NotFound from './components/NotFound';
 import Feedback from './components/FeedbackPage/feedback';
 import IndexFeed from './admin/feedbacks/index';
+import ShowFeed from './admin/feedbacks/show';
 
  
 const routes=[
@@ -39,6 +40,11 @@ const routes=[
         main: () => <IndexFeed/>
     },
     {
+        path:'/showFeed/:id',
+        exact:false,
+        main: ({match}) => <ShowFeed match={match}  />
+    },
+    {
         path:'/login',
         exact:false,
         main: () => <Login/>
@@ -49,9 +55,9 @@ const routes=[
         main: () => <Signup/>
     },
     {
-        path:'/detail',
+        path:'/detail/:id',
         exact:false,
-        main: () => <Detail/>
+        main: ({match}) => <Detail match={match}/>
     },
     {
         path:'/admin',
