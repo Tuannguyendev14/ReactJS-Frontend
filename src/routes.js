@@ -2,8 +2,8 @@ import React from 'react';
  
 import Index from './components/Homepage/index';
 import PostStatus from './components/PostStatusPage/postStatus';
-import Login from './components/LoginPage/login';
-import Signup from './components/SignUp/signup';
+import Login from './components/Auth/login';
+import Signup from './components/Auth/signup';
 import Detail from './components/DetailPage/detail';
 import Admin from './admin/homepage/admin';
 import AddPost from './admin/posts/add';

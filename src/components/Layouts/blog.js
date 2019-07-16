@@ -13,7 +13,7 @@ export default class Blog extends Component {
 
                             <img src={post.event_image} className="img-responsive" alt="ok" style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
-                                <span>{post.time}</span>
+                                <span>{post.startDay}</span>
 
                             </div>
                         </div>

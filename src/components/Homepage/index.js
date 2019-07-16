@@ -4,12 +4,14 @@ import Slide    from   './../Layouts/slide'  ;
 import Caption  from   './../Layouts/caption';
 import Footer   from   './../Layouts/footer' ;
 import Content  from   './../Layouts/content';
-import fire from '../../Config/fire';
+import * as actions from './../../actions/index';
+import { connect } from 'react-redux';
 
-export default class Index extends Component {
+
+class Index extends Component {
 
 	logout=()=>{
-		fire.auth().signOut();
+		 this.props.onsignOut();
 	}
 
 	render() {
@@ -31,3 +33,19 @@ export default class Index extends Component {
 		);
 	}
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError
+    };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onsignOut: () => {
+            dispatch(actions.signOut());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

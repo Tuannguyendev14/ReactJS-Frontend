@@ -40,7 +40,6 @@ class Detail extends Component {
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5  product-details  ">
-                            <h1 className="p-title"></h1>
                             <h3 className="p-price">{post.startDay} -> {post.endDay}</h3>
                             <h4 className="p-stock">Time : <span>{post.startTime} -> {post.endTime}</span></h4>
                             <div id="accordion" className="accordion-area">

@@ -58,6 +58,9 @@ class FormPost extends Component {
         } else { // add new data
             this.props.onSubmit(post);
         }
+        this.setState({
+            isBlocking: false
+        });
         history.goBack();
     }
 

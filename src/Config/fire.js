@@ -1,15 +1,19 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAeYtP4_F8UT9j7ocDMdQoDUylpL-CJNMY",
-    authDomain: "danavolunteering.firebaseapp.com",
-    databaseURL: "https://danavolunteering.firebaseio.com",
-    projectId: "danavolunteering",
-    storageBucket: "",
-    messagingSenderId: "58167590161",
-    appId: "1:58167590161:web:d94fc0a9670449c6"
-  };
+  apiKey: "AIzaSyDZIGMCD6LktiI6dfRsTips5CJHVlzIYmI",
+  authDomain: "dana-volunteering.firebaseapp.com",
+  databaseURL: "https://dana-volunteering.firebaseio.com",
+  projectId: "dana-volunteering",
+  storageBucket: "dana-volunteering.appspot.com",
+  messagingSenderId: "1073275909186",
+  appId: "1:1073275909186:web:fb4dd7d387eea686"
+};
 
-const fire = firebase.initializeApp(firebaseConfig);
-export default fire;
+firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({timestampsInSnapshots:true});
+
+export default firebase;
 

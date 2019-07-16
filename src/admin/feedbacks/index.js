@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Aside from './../layout/aside'
 import Header from './../layout/header'
 import Table from './table';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
 
@@ -19,7 +18,7 @@ class indexFeedback extends Component {
     }
 
     onDelete = (id) => {
-    this.props.onDeleteFeedback(id);
+        this.props.onDeleteFeedback(id);
     }
 
     onChange = (event) => {
@@ -36,13 +35,7 @@ class indexFeedback extends Component {
     }
 
     render() {
-        var { feedbacks, filter } = this.props;
-
-        // if (filter.name) {
-        // feedbacks = feedbacks.filter((feedback) => {
-        // return post.event_name.toLowerCase().indexOf(filter.name) !== -1;
-        // });
-        // }
+        var { feedbacks } = this.props;
 
         var results = feedbacks.map((feedback, index) => {
             var result = null;
@@ -66,7 +59,7 @@ class indexFeedback extends Component {
                                 <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 </div>
                                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8 css">
-                                    <h2 style={{color:'red'}}>Customer's feedbacks</h2><br />
+                                    <h2 style={{ color: 'red' }}>Customer's feedbacks</h2><br />
                                     <table className="table table-striped table-hover table-bordered">
                                         <thead>
                                             <tr>
@@ -106,7 +99,7 @@ const mapDispatchToProps = (dispatch, props) => {
             dispatch(actions.actFetchFeedbackRequest());
         },
         onDeleteFeedback: (id) => {
-        dispatch(actions.actDeleteFeedbackRequest(id));
+            dispatch(actions.actDeleteFeedbackRequest(id));
         }
         // ,
         // onFilter: (filter) => {

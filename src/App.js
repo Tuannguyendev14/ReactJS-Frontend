@@ -4,7 +4,8 @@ import './App.css';
 import routes from './routes';
 import fire from './Config/fire';
 import Index from './components/Homepage';
-import Login from './components/LoginPage/login';
+import Login from './components/Auth/login';
+import {Redirect} from 'react-router-dom';
 
 class App extends Component {
 
@@ -47,11 +48,15 @@ class App extends Component {
 
     render() {
         var { user } = this.state;
+        // if(user) return <Redirect to='/' />
+        // else  return <Redirect to='/' />
+         
+
         return (
             <div>
                 <BrowserRouter>
                     <Switch>
-                        {/* {user ? (<Index />) : (<Login />)} */}
+                     {/* {user ? (<Index />) : (<Login />)} */}
                         {this.showContentMenu(routes)}
                     </Switch>
                 </BrowserRouter>

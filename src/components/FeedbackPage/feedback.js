@@ -14,18 +14,18 @@ class Feedback extends Component {
             isBlocking: false,
             id: '',
             user_name: '',
-            email: '',
+            user_email: '',
             subject: '',
             message: ''
         }
     }
 
-    onClear=()=>{
+    onClear = () => {
         this.setState({
             isBlocking: false,
             id: '',
             user_name: '',
-            email: '',
+            user_email: '',
             subject: '',
             message: ''
         });
@@ -43,34 +43,34 @@ class Feedback extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        var { history } = this.props;
-        var { id, user_name, email, subject, message } = this.state;
+        // var { history } = this.props;
+        var { id, user_name, user_email, subject, message } = this.state;
         var feedback = {
-            id : id,
+            id: id,
             user_name: user_name,
-            email: email,
+            user_email: user_email,
             subject: subject,
             message: message
         }
 
         if (id) { // update
-           this.props.onUpdatePost(feedback);
+            this.props.onUpdatePost(feedback);
         } else { // add new data
             this.props.onSubmit(feedback);
             this.onClear();
         }
-        
+
         alert("Your feedback has sent successfuly");
     }
 
-     
+
 
     render() {
         return (
             <div>
                 <Header />
                 {/* Page info */}
-                <Prompt when={this.state.isBlocking} message={location=>('Are you sure to move to other page')}/>
+                <Prompt when={this.state.isBlocking} message={location => ('Are you sure to move to other page')} />
                 <div className="page-top-info">
                     <div className="container">
                         <h4>Contact</h4>
@@ -103,10 +103,10 @@ class Feedback extends Component {
                                 <a href="eeee"><i className="fa fa-behance" /></a>
                             </div>
                             <form className="contact-form" onSubmit={this.onSubmit}>
-                                <input type="text" placeholder="Your name" name="user_name" value={this.state.user_name} onChange={this.onChange} required/>
-                                <input type="email" placeholder="Your e-mail" name="email" value={this.state.email} onChange={this.onChange} required />
+                                <input type="text" placeholder="Your name" name="user_name" value={this.state.user_name} onChange={this.onChange} required />
+                                <input type="email" placeholder="Your e-mail" name="user_email" value={this.state.user_email} onChange={this.onChange} required />
                                 <input type="text" placeholder="Subject" name="subject" value={this.state.subject} onChange={this.onChange} required />
-                                <textarea placeholder="Message"   name="message" value={this.state.message} onChange={this.onChange} required />
+                                <textarea placeholder="Message" name="message" value={this.state.message} onChange={this.onChange} required />
                                 <button className="site-btn" type="submit">SEND NOW</button>
                             </form>
                         </div>

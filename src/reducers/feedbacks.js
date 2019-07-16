@@ -14,7 +14,7 @@ var findIndex = (feedbacks, id) => {
 }
 
 var feedbacks = (state = initialState, action) => {
-    var { id, feedback } = action;
+    var { id } = action;
     var index = -1;
 
     switch (action.type) {

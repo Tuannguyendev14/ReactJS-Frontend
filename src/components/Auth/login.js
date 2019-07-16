@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import fire from '../../Config/fire';
+import firebase from '../../Config/fire';
+import * as actions from './../../actions/index';
+import { connect } from 'react-redux';
 
-export default class Login extends Component {
+class Login extends Component {
 
     constructor(props) {
         super(props);
@@ -16,23 +18,28 @@ export default class Login extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    login = (e) => {
+    onsignIn = (e) => {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-        }).catch((error) => {
-            console.log(error);
-        });
+        var user  = {
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        this.props.onsignIn(user);
+
+        
     }
 
-    signup = (e) => {
-        e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+    // signup = (e) => {
+    //     e.preventDefault();
+    //     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }
 
     render() {
+        const {authError} = this.props;
         return (
             <div className="body">
                 <div className="box">
@@ -48,14 +55,15 @@ export default class Login extends Component {
                             <label>Password</label>
                         </div>
                         <center>
-                            <button type="submit" class="btn btn-primary btn-lg" onClick={this.login}>Login</button>
-                            <button type="button" class="btn btn-danger btn-lg" onClick={this.signup}>Sign up</button>
-                            {/* <input type="submit" value="Login" onClick={this.login} /> */}
+                            <button type="submit" className="btn btn-primary btn-lg" onClick={this.onsignIn}>Login</button>
+                            {/* <button type="button" class="btn btn-danger btn-lg" onClick={this.signup}>Sign up</button>  
+                              <input type="submit" value="Login" onClick={this.login} />  */}
                         </center>
                         <center>
                             <br />
                             <p style={{ color: 'red', fontWeight: 'bold', fontSize: '18px' }}>Don't have an account?
-                    <Link to="/signup" className="nav-link">Sign up now</Link>
+                            <Link to="/signup" className="nav-link">Sign up now</Link>
+                             {authError? <h4>{authError}</h4> : null} 
                             </p>
                         </center>
                     </form>
@@ -64,3 +72,18 @@ export default class Login extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError
+    };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onsignIn: (user) => {
+            dispatch(actions.signIn(user));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

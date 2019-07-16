@@ -18,8 +18,8 @@ export default class Table extends Component {
             <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{feedback.user_name}</td>
-                <td>{feedback.email}</td>
-                <td scope="col">{feedback.subject}</td>
+                <td>{feedback.user_email}</td>
+                <td>{feedback.subject}</td>
 
                 <td className="text-center">
                     <Link to={`/showFeed/${feedback.id}`}>
