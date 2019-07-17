@@ -1,13 +1,39 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
+class Header extends Component {
 
 	logout = () => {
 		this.props.logout();
 	}
 
 	render() {
+
+		const { auth, profile } = this.props;
+		console.log(auth);
+
+		const links = auth.uid ?
+			<div className="up-item">
+				<div className="shopping-card">
+					<i className="glyphicon glyphicon-log-out" />
+				</div>
+				<a href="/login" style={{ fontSize: '20px' }} onClick={this.logout}>Log out</a>
+			</div>
+			:
+			<div>
+				<div className="up-item">
+					<i className=" glyphicon glyphicon-log-in" />
+					<a href="/login" style={{ fontSize: '20px' }}> Sign In </a>
+				</div>
+				<div className="up-item">
+					<div className="shopping-card">
+						<i className="glyphicon glyphicon-log-out" />
+					</div>
+					<a href="/signup" style={{ fontSize: '20px' }} onClick={this.logout}>Sign up</a>
+				</div></div>
+			;
+
 		return (
 			<div>
 				{/* Header section */}
@@ -31,16 +57,7 @@ export default class Header extends Component {
 										marginTop: '11px',
 										marginLeft: '22px'
 									}}>
-										<div className="up-item">
-											<i className=" glyphicon glyphicon-log-in" />
-											<a href="/login" style={{ fontSize: '20px' }}> Sign In </a>
-										</div>
-										<div className="up-item">
-											<div className="shopping-card">
-												<i className="glyphicon glyphicon-log-out" />
-											</div>
-											<a href="/signup" style={{ fontSize: '20px' }} onClick={this.logout}>Log out</a>
-										</div>
+										{links}
 									</div>
 								</div>
 							</div>
@@ -77,6 +94,8 @@ export default class Header extends Component {
 										<li><Link to="/feedback" className="nav-link">Contact us</Link> </li>
 									</ul>
 								</li>
+								<li id="profile"><a href="/ll">{profile.initials}</a></li>
+
 							</ul>
 						</div>
 					</nav>
@@ -86,4 +105,12 @@ export default class Header extends Component {
 	}
 }
 
+const mapStateToProps = (state) => {
+	console.log(state);
+	return {
+		auth: state.firebase.auth,
+		profile: state.firebase.profile
+	};
+};
 
+export default connect(mapStateToProps, null)(Header);

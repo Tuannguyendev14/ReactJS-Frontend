@@ -2,33 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import routes from './routes';
-import fire from './Config/fire';
-import Index from './components/Homepage';
-import Login from './components/Auth/login';
-import {Redirect} from 'react-router-dom';
 
 class App extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {},
-        }
-    }
-
-    componentDidMount() {
-        this.authListener();
-    }
-
-    authListener() {
-        fire.auth().onAuthStateChanged((user) => {
-            if (user) {
-                this.setState({ user });
-            } else {
-                this.setState({ user: null });
-            }
-        });
-    }
 
     showContentMenu = () => {
         var result = null;
@@ -47,16 +22,11 @@ class App extends Component {
     }
 
     render() {
-        var { user } = this.state;
-        // if(user) return <Redirect to='/' />
-        // else  return <Redirect to='/' />
-         
-
+        
         return (
             <div>
                 <BrowserRouter>
                     <Switch>
-                     {/* {user ? (<Index />) : (<Login />)} */}
                         {this.showContentMenu(routes)}
                     </Switch>
                 </BrowserRouter>
@@ -64,5 +34,6 @@ class App extends Component {
         );
     }
 }
+
 
 export default App;

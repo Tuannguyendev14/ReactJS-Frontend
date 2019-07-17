@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import * as actions from './../../actions/index';
+import { Link } from 'react-router-dom';
 
 class Signup extends Component {
-
 
     constructor(props) {
         super(props);
@@ -26,12 +26,12 @@ class Signup extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
-         this.props.signUp(this.state);
+        this.props.signUp(this.state);
     }
 
     render() {
         const { auth, authError } = this.props;
-
+        if (auth.uid) return <Redirect to='/' />
         return (
             <div className="body">
                 <div className="box">
@@ -66,8 +66,8 @@ class Signup extends Component {
                         <input type="submit" id="btn" name="" value="Register" />
 
                         <center><br />
-                            <p style={{ color: 'red', fontWeight: 'bold', fontSize: '18px' }}>Already have an account? <a href="/login">Login here</a></p>
-
+                            <p style={{ color: 'red', fontWeight: 'bold', fontSize: '18px' }}>Already have an account? <Link to="/login">Login here</Link></p>
+                            {authError ? <p style={{ color: 'red', fontWeight: 'bold', fontSize: '18px' }}>{authError}</p> : null}
                         </center>
                     </form>
 
@@ -82,11 +82,12 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authReducer: state.authReducer
+        auth: state.firebase.auth,
+        authError: state.auth.authError
     };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         signUp: (newUser) => {
             dispatch(actions.signUp(newUser));

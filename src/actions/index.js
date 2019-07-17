@@ -205,6 +205,4 @@ export const signUp = (newUser) => {
             dispatch({ type: 'SIGNUP_ERROR', err })
         })
     }
-
-
 }

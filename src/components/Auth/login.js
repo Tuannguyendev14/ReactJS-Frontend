@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import firebase from '../../Config/fire';
 import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -20,26 +20,29 @@ class Login extends Component {
 
     onsignIn = (e) => {
         e.preventDefault();
-        var user  = {
+        var user = {
             email: this.state.email,
             password: this.state.password
         }
-
         this.props.onsignIn(user);
-
-        
     }
 
-    // signup = (e) => {
-    //     e.preventDefault();
-    //     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
-
     render() {
-        const {authError} = this.props;
+        const { authError, auth } = this.props;
+        if (auth.uid) return <Redirect to='/' />
+
+        // var call = () => {
+        //     var result = null;
+        //     if (auth.uid === '3uWF4biLlqRsT0B2zZUXtpPEsQH2') {
+        //         result = <Redirect to='/admin' />
+        //     } else {
+        //         result = <Redirect to='/' />
+        //     }
+        //     return result;
+        // }
+
+   
+
         return (
             <div className="body">
                 <div className="box">
@@ -63,7 +66,7 @@ class Login extends Component {
                             <br />
                             <p style={{ color: 'red', fontWeight: 'bold', fontSize: '18px' }}>Don't have an account?
                             <Link to="/signup" className="nav-link">Sign up now</Link>
-                             {authError? <h4>{authError}</h4> : null} 
+                                {authError ? <h4>{authError}</h4> : null}
                             </p>
                         </center>
                     </form>
@@ -75,7 +78,8 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: state.auth.authError,
+        auth: state.firebase.auth
     };
 };
 

@@ -13,24 +13,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
-import Config from './Config/fire';  
+import Config from './Config/fire';
 
 const store = createStore(
     myReducer,
     compose(
         applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
         reduxFirestore(Config),
-        reactReduxFirebase(Config)
+        reactReduxFirebase(Config, { useFirestoreForProfile: true, userProfile: 'users', attachAuthIsReady: true })
     )
-
 );
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
-);
+store.firebaseAuthIsReady.then(() => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <App />
+        </Provider>,
+        document.getElementById('root')
+    );
+});
+
 
 
 serviceWorker.unregister();
