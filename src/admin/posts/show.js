@@ -4,6 +4,7 @@ import Header from './../layout/header'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
+import moment from 'moment';
 
 class showPost extends Component {
 
@@ -115,6 +116,15 @@ class showPost extends Component {
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                                             <h3 className="form-control-static"> {post.description}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+                                            <h3>Created at</h3>
+                                        </div>
+                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                                            <h3 className="form-control-static"> { moment(post.createdAt).calendar()}</h3>
+
                                         </div>
                                     </div>
                                     <br /><br />

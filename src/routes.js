@@ -27,7 +27,7 @@ const routes=[
     {
         path:'/poststatus',
         exact:false,
-        main: () => <PostStatus/>
+        main:({history}) => <PostStatus history={history}/>
     },
     {
         path:'/feedback',

@@ -1,89 +1,165 @@
 import React, { Component } from 'react';
-import callApi from './../../utils/apicaller';
- 
+import { Link, Prompt } from 'react-router-dom';
+import * as actions from './../../actions/index';
+import { connect } from 'react-redux';
 
-export default class FormPost extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: '',
-            user_name: '',
-            phone_number: '',
-            event_name: '',
-            nu_participant: '',
-            venue: '',
-            description: ''
+class FormPost extends Component {
+    state = {
+        isBlocking: false,
+        id: '',
+        user_name: '',
+        phone_number: '',
+        event_name: '',
+        event_image: '',
+        startDay: '',
+        startTime: '',
+        endDay: '',
+        endTime: '',
+        nu_participant: '',
+        venue: '',
+        description: ''
 
-        }
     }
 
-    onChange = (event) => {
-        var target = event.target;
-        var name = target.name;
-        var value = target.type === 'checkbox' ? target.checked : target.value;
-
+    onChange = (e) => {
         this.setState({
-            [name]: value
+            [e.target.id]: e.target.value,
+            isBlocking: e.target.value.length > 0
         });
     }
 
     onSubmit = (event) => {
         event.preventDefault();
-        var {history} = this.props;
-        var {user_name, phone_number, event_name, nu_participant, venue, description} = this.state;
-        callApi('posts', 'POST', {
-            user_name: user_name,
-            phone_number: phone_number,
-            event_name: event_name,
-            nu_participant: nu_participant,
-            venue: venue,
-            description: description
-        }).then(res=>{
-             history.push("/posts");
+        var { history } = this.props;
+        this.props.onCreatePost(this.state);
+        this.setState({
+            isBlocking: false
         });
-      
+        history.goBack();
     }
-
 
     render() {
         return (
-
             <div className='row'>
-                <div className="col-xs-0 col-sm-0 col-md-0 col-lg-1"> </div>
-
-                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 contact-section contact-info">
-
-                    <h3>Post your event</h3>
-
+                <Prompt when={this.state.isBlocking} message={location => ('Are you sure to move to other page')} />
+                <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2"> </div>
+                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-9 contact-section contact-info">
                     <form className="contact-form" onSubmit={this.onSubmit}>
-                        <input type="text" placeholder="Your name" name="user_name" value={this.state.user_name} onChange={this.onChange} />
-                        <input type="number" placeholder="Your phone number" name="phone_number" value={this.state.phone_number} onChange={this.onChange} />
-                        <input type="text" placeholder="Event's name" name="event_name" value={this.state.event_name} onChange={this.onChange} />
-                        <input type="number" placeholder="Number of participants" name="nu_participant" value={this.state.nu_participant} onChange={this.onChange} />
-                        <input type="text " placeholder="Venue name" name="venue" value={this.state.venue} onChange={this.onChange} />
-                        <textarea placeholder="Description" name="description" value={this.state.description} onChange={this.onChange} />
-
-                        <button type="submit" className="site-btn">Post now</button>
-                    </form>
-                </div>
-
-                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-5">
-                    <form className="md-form">
-                        <div className="file-field">
-                            <br /><br /><br />
-                            <div className="z-depth-1-half mb-4">
-                                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" className="img-fluid" alt="example placeholder" />
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Your name: </h3>
                             </div>
-                            <div className="d-flex justify-content-center">
-                                <div className="btn btn-mdb-color btn-rounded float-left">
-                                    <span>Choose file</span>
-                                    <input type="file" />
-                                </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="text" placeholder="Your name" id="user_name" onChange={this.onChange} />
                             </div>
                         </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Your phone number: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="number" placeholder="Your phone number" id="phone_number" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Event name: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="text" placeholder="Event's name" id="event_name" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Event image: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="text" id="event_image" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Start day: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="date" id="startDay" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Start time: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="time" id="startTime" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>End day: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="date" id="endDay" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>End time: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="time" id="endTime" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Nu participant: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="number" id="nu_participant" onChange={this.onChange} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Venue: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="text " id="venue" onChange={this.onChange} />
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h3>Description: </h3>
+                            </div>
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <textarea id="description" onChange={this.onChange} rows="3" />
+                            </div>
+                        </div>
+                        <center>
+                            <Link to="/posts"> <button style={{ marginLeft: '-125px' }} type="button"
+                                className="site-btn">Back</button></Link>
+                            <button style={{ marginLeft: '40px' }} type="submit" className="site-btn">Post now</button>
+                        </center>
+
+
                     </form>
                 </div>
+                <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2"> </div>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        postEditting: state.postEditting
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onCreatePost: (post) => {
+            dispatch(actions.createPost(post));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(FormPost);

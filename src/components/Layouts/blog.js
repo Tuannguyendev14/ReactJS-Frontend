@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 export default class Blog extends Component {
 
@@ -10,11 +11,9 @@ export default class Blog extends Component {
                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div className="latest-news-wrap">
                         <div className="news-img">
-
                             <img src={post.event_image} className="img-responsive" alt="ok" style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
                                 <span>{post.startDay}</span>
-
                             </div>
                         </div>
                         <div className="news-content">
@@ -24,7 +23,8 @@ export default class Blog extends Component {
                             <i className="fa fa-youtube"></i>
                             <i className="fa fa-whatsapp"></i>
                             <p> {post.description} </p><br />
-                            <Link to={`/detail/${post.id}`}>Read more ...</Link> 
+                            <p>{moment().subtract(6, 'days').calendar()}</p>
+                            <Link to={`/detail/${post.id}`}>Read more ...</Link>
 
                         </div>
                     </div>

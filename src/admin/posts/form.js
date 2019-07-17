@@ -19,7 +19,8 @@ class FormPost extends Component {
             endTime: '',
             nu_participant: '',
             venue: '',
-            description: ''
+            description: '',
+            createdAt: ''
 
         }
     }
@@ -37,7 +38,7 @@ class FormPost extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         var { history } = this.props;
-        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description } = this.state;
+        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description, createdAt } = this.state;
         var post = {
             id: id,
             user_name: user_name,
@@ -50,7 +51,8 @@ class FormPost extends Component {
             endTime: endTime,
             nu_participant: nu_participant,
             venue: venue,
-            description: description
+            description: description,
+            createdAt: new Date()
         }
 
         if (id) { // update
@@ -102,7 +104,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Your name: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="text" placeholder="Your name" name="user_name" value={this.state.user_name}
                                     onChange={this.onChange} required />
                             </div>
@@ -111,7 +113,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Your phone number: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="number" placeholder="Your phone number" name="phone_number" value={this.state.phone_number}
                                     onChange={this.onChange} required />
                             </div>
@@ -120,7 +122,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Event name: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="text" placeholder="Event's name" name="event_name" value={this.state.event_name}
                                     onChange={this.onChange} required />
                             </div>
@@ -129,7 +131,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Event image: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="text" name="event_image" value={this.state.event_image}
                                     onChange={this.onChange} required />
                             </div>
@@ -138,8 +140,8 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Start day: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="date" name="startDay" id="input" class="form-control"
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="date" name="startDay" id="input"
                                     value={this.state.startDay} onChange={this.onChange} required="required" />
                             </div>
                         </div>
@@ -147,8 +149,8 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Start time: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="time" name="startTime" id="input" class="form-control"
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="time" name="startTime" id="input"
                                     value={this.state.startTime} onChange={this.onChange} required="required" />
                             </div>
                         </div>
@@ -156,8 +158,8 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>End day: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="date" name="endDay" id="input" class="form-control"
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="date" name="endDay" id="input"
                                     value={this.state.endDay} onChange={this.onChange} required="required" />
                             </div>
                         </div>
@@ -165,8 +167,8 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>End time: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="time" name="endTime" id="input" class="form-control"
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                                <input type="time" name="endTime" id="input"
                                     value={this.state.endTime} onChange={this.onChange} required="required" />
                             </div>
                         </div>
@@ -174,7 +176,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Nu participant: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="number" name="nu_participant"
                                     value={this.state.nu_participant} onChange={this.onChange} required />
                             </div>
@@ -183,7 +185,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Venue: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <input type="text " name="venue" value={this.state.venue}
                                     onChange={this.onChange} required />
                             </div>
@@ -193,7 +195,7 @@ class FormPost extends Component {
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Description: </h3>
                             </div>
-                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+                            <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
                                 <textarea name="description" onChange={this.onChange}
                                     value={this.state.description} rows="3" required="required"></textarea>
                             </div>

@@ -3,12 +3,18 @@ import Blog from './blog';
 import Horizontal from './horizontal';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+
+
 class Content extends Component {
     componentDidMount() {
         this.props.fetchAllPosts();
     }
+
     render() {
-        var { posts  } = this.props;
+        var { posts, postFirebases } = this.props;
+
         var results = posts.map((post, index) => {
             var result = null;
             if (posts.length > 0) {
@@ -16,7 +22,16 @@ class Content extends Component {
                     post={post} onDelete={this.onDelete} />
             }
             return result;
-        }).slice(0,3); 
+        }).slice(0, 3);
+
+        // var resultsFirebase = postFirebases.map((post, index) => {
+        //     var result = null;
+        //     if (posts.length > 0) {
+        //         result = <Blog key={index} index={index}
+        //             post={post} onDelete={this.onDelete} />
+        //     }
+        //     return result;
+        // }).slice(0, 3);
 
         return (
             <div>
@@ -31,15 +46,22 @@ class Content extends Component {
 
                     <div className="row">
                         <div className="news_active">
-                        {results}
+                            {results}
                         </div>
                     </div>
                 </section>
                 <br /><br />
 
+
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
                     <Horizontal />
                     <br />
+                </div>
+
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
+                    <div className="container">
+                        {/* {resultsFirebase} */}
+                    </div>
                 </div>
 
 
@@ -52,7 +74,7 @@ class Content extends Component {
                             <img src="img/blogs/ttn.jpg" className="img-responsive" alt="ok" />
                         </div>
                         <div className="  col-xs-12 col-sm-12 col-md-5 col-lg-4 news-content ">
-                             
+
                             <h2 style={{ color: 'black', fontWeight: 'bold' }}>  KÊU GỌI ỦNG HỘ TẾT THIẾU NHI 01/06 </h2>
                             <br /><br />
                             <p style={{ color: '#4d4748' }}> + 🏵Một năm có 365 ngày, duy chỉ có một ngày gọi là TẾT của thiếu
@@ -124,7 +146,7 @@ class Content extends Component {
                     </div>
                 </div>
 
-                <br/> 
+                <br />
 
 
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -140,19 +162,22 @@ class Content extends Component {
                     </div>
                 </div>
 
-                 
+
 
 
             </div>
 
-                        );
+        );
     }
 }
 
 
 const mapStateToProps = (state) => {
+    console.log(state);
+
     return {
         posts: state.posts
+        // postFirebases: state.postReducer.posts
     }
 }
 
@@ -164,3 +189,11 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
+
+// export default compose(
+//     connect(mapStateToProps),
+//     firestoreConnect([
+//         { collection: 'posts' }
+//     ])
+// )
+// (Content);

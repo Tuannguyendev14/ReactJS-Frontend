@@ -15,3 +15,8 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';  
 export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS'; 
 
+// create post by using fiebase
+export const CREATE_POST = 'CREATE_POST'; 
+export const CREATE_POST_ERROR = 'CREATE_POST_ERROR'; 
+
+

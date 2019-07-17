@@ -7,12 +7,13 @@ import FormPost from './formPost';
 export default class PostStatus extends Component {
 
   render() {
+    var { history } = this.props;
     return (
       <div>
         <Header />
         <br /> <br /> <br />
 
-        <FormPost />
+        <FormPost history={history} />
 
         <br /><br />
 

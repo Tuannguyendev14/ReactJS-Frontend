@@ -16,7 +16,8 @@ class Feedback extends Component {
             user_name: '',
             user_email: '',
             subject: '',
-            message: ''
+            message: '',
+            createdAt: ''
         }
     }
 
@@ -44,13 +45,14 @@ class Feedback extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         // var { history } = this.props;
-        var { id, user_name, user_email, subject, message } = this.state;
+        var { id, user_name, user_email, subject, message ,createdAt } = this.state;
         var feedback = {
             id: id,
             user_name: user_name,
             user_email: user_email,
             subject: subject,
-            message: message
+            message: message,
+            createdAt: new Date()
         }
 
         if (id) { // update

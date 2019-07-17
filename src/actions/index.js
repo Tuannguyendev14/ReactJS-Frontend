@@ -161,29 +161,29 @@ export const actReadFeedback = (feedback) => {
 }
 
 export const signIn = (credentials) => {
-    return ( dispatch, getState, {getFirebase})=>{
+    return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
         firebase.auth().signInWithEmailAndPassword(
             credentials.email,
             credentials.password
-        ).then(()=>{
-            dispatch({type: 'LOGIN_SUCCESS'});
-        }).catch((err)=>{
-            dispatch({type: 'LOGIN_ERROR', err});
+        ).then(() => {
+            dispatch({ type: 'LOGIN_SUCCESS' });
+        }).catch((err) => {
+            dispatch({ type: 'LOGIN_ERROR', err });
         });
     }
 }
 
 export const signOut = () => {
-    return ( dispatch, getState, {getFirebase})=>{
+    return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
-        firebase.auth().signOut().then(()=>{
-            dispatch({type: 'SIGNOUT_SUCCESS'});
+        firebase.auth().signOut().then(() => {
+            dispatch({ type: 'SIGNOUT_SUCCESS' });
         });
     }
 }
 
- 
+
 
 export const signUp = (newUser) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -203,6 +203,22 @@ export const signUp = (newUser) => {
             dispatch({ type: 'SIGNUP_SUCCESS' })
         }).catch(err => {
             dispatch({ type: 'SIGNUP_ERROR', err })
+        })
+    }
+}
+
+export const createPost = (post) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        const firestore = getFirestore();
+
+        firestore.collection('posts').add({
+            ...post,
+            username:'Tuan',
+            createdAt: new Date()
+        }).then(() => {
+            dispatch({ type: 'CREATE_POST', post });
+        }).catch((err)=>{
+            dispatch({type:'CREATE_POST_ERROR', err});
         })
     }
 }

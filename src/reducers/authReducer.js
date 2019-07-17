@@ -6,33 +6,34 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
+        case types.CREATE_POST:
+            return state;
+
+        case types.CREATE_POST_ERROR:
+            return state;
+
         case types.LOGIN_ERROR:
-            console.log('login error');
             return {
                 ...state,
                 authError: 'This account is not correct, please check again!'
             }
 
         case types.LOGIN_SUCCESS:
-            console.log('login success');
             return {
                 ...state,
                 authError: null
             }
 
-        case types.SIGNOUT_SUCCESS: 
-            console.log('sign out  success');
+        case types.SIGNOUT_SUCCESS:
             return state;
 
         case types.SIGNUP_SUCCESS:
-            console.log('sign up success');
             return {
                 ...state,
                 authError: null
             }
 
         case types.SIGNUP_ERROR:
-            console.log('sign up error');
             return {
                 ...state,
                 authError: action.err.message
