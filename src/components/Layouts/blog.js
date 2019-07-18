@@ -23,7 +23,7 @@ export default class Blog extends Component {
                             <i className="fa fa-youtube"></i>
                             <i className="fa fa-whatsapp"></i>
                             <p> {post.description} </p><br />
-                            <p>{moment().subtract(6, 'days').calendar()}</p>
+                            <p> { moment(post.createdAt).calendar()}</p>
                             <Link to={`/detail/${post.id}`}>Read more ...</Link>
 
                         </div>

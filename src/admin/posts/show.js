@@ -127,6 +127,15 @@ class showPost extends Component {
 
                                         </div>
                                     </div>
+                                    <div className="row">
+                                        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+                                            <h3>Posted by</h3>
+                                        </div>
+                                        <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                                            <h3 className="form-control-static"> { post.postedBy}</h3>
+
+                                        </div>
+                                    </div>
                                     <br /><br />
                                     <div className="row">
                                         <div className=" col-sm-1 "></div>

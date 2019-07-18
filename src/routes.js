@@ -16,6 +16,7 @@ import NotFound from './components/NotFound';
 import Feedback from './components/FeedbackPage/feedback';
 import IndexFeed from './admin/feedbacks/index';
 import ShowFeed from './admin/feedbacks/show';
+import Join from './components/Joinpage/join';
 
  
 const routes=[
@@ -98,6 +99,11 @@ const routes=[
         path:'/addUser',
         exact:false,
         main: () => <AddUser/>
+    },
+    {
+        path:'/join',
+        exact:false,
+        main: () => <Join/>
     },
     {
         path:'',

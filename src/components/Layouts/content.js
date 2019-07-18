@@ -22,7 +22,7 @@ class Content extends Component {
                     post={post} onDelete={this.onDelete} />
             }
             return result;
-        }).slice(0, 3);
+        }) ;
 
         // var resultsFirebase = postFirebases.map((post, index) => {
         //     var result = null;

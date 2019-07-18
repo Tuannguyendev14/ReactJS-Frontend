@@ -17,7 +17,9 @@ class FormPost extends Component {
         endTime: '',
         nu_participant: '',
         venue: '',
-        description: ''
+        description: '',
+        createdAt: '',
+        postedBy: ''
 
     }
 
@@ -28,10 +30,29 @@ class FormPost extends Component {
         });
     }
 
+
     onSubmit = (event) => {
         event.preventDefault();
-        var { history } = this.props;
-        this.props.onCreatePost(this.state);
+        var { history, auth } = this.props;
+        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description, createdAt ,postedBy} = this.state;
+        var post = {
+            id: id,
+            user_name: user_name,
+            phone_number: phone_number,
+            event_name: event_name,
+            event_image: event_image,
+            startDay: startDay,
+            startTime: startTime,
+            endDay: endDay,
+            endTime: endTime,
+            nu_participant: nu_participant,
+            venue: venue,
+            description: description,
+            createdAt: new Date(),
+            postedBy: auth.firstName + auth.lastName
+        }
+        this.props.onSubmit(post);
+
         this.setState({
             isBlocking: false
         });
@@ -151,15 +172,15 @@ class FormPost extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        postEditting: state.postEditting
+        auth: state.firebase.profile
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onCreatePost: (post) => {
-            dispatch(actions.createPost(post));
+        onSubmit: (post) => {
+            dispatch(actions.actAddPostRequest(post));
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(FormPost);
+export default connect(mapStateToProps, mapDispatchToProps)(FormPost); 

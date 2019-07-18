@@ -68,28 +68,29 @@ class Header extends Component {
 							<ul className="main-menu">
 								<li> <Link to="/" className="nav-link">Home</Link> </li>
 								<li><Link to="/feedback" className="nav-link"> About us</Link></li>
-								<li><a href="/ewrw">Event</a>
+								<li><Link to="/poststatus">Post</Link></li>
+								<li><Link to="/ewrw">Event</Link>
 									<ul className="sub-menu">
-										<li><a href="/ffwef">Donate Clother</a></li>
-										<li><a href="/erwe">Donate Food</a></li>
-										<li><a href="/rweew ">Donate Books</a></li>
+										<li><Link to="/ffwef">Donate Clother</Link></li>
+										<li><Link to="/erwe">Donate Food</Link></li>
+										<li><Link to="/rweew ">Donate Books</Link></li>
 									</ul>
 								</li>
 								<li><a href="/kk">Pages</a>
 									<ul className="sub-menu">
-										<li><a href="./product.html">Product Page</a></li>
-										<li><a href="./category.html">Category Page</a></li>
-										<li><a href="./cart.html">Cart Page</a></li>
-										<li><a href="./checkout.html">Checkout Page</a></li>
-										<li><a href="./contact.html">Contact Page</a></li>
+										<li><Link to="./product.html">Product Page</Link></li>
+										<li><Link to="./category.html">Category Page</Link></li>
+										<li><Link to="./cart.html">Cart Page</Link></li>
+										<li><Link to="./checkout.html">Checkout Page</Link></li>
+										<li><Link to="./contact.html">Contact Page</Link></li>
 									</ul>
 								</li>
-								<li><a href="/ll">Blog</a></li>
+								
 								<li><a href="/kk">Account</a>
 									<ul className="sub-menu">
-										<li><a href="./product.html">Profile</a></li>
+										<li><Link to="./product.html">Profile</Link></li>
 										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>
-										<li><a href="./category.html">Log out Page</a></li>
+										<li><Link to="./category.html">Log out Page</Link></li>
 										<li><Link to="/feedback" className="nav-link">Contact us</Link> </li>
 									</ul>
 								</li>

@@ -4,6 +4,7 @@ import Header from './../Layouts/header';
 import Footer from './../Layouts/footer';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
+import Join from './../Joinpage/join';
 
 class Detail extends Component {
 
@@ -31,15 +32,15 @@ class Detail extends Component {
                 </div>
                 <section className="product-section">
                     <div className="row">
-                        <div class="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
+                        <div className="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                             <div className="product-pic-zoom">
                                 <img className="product-big-img" style={{ width: '600px' }} src={post.event_image} alt="ok" />
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5  product-details  ">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5  product-details  ">
                             <h3 className="p-price">{post.startDay} -> {post.endDay}</h3>
                             <h4 className="p-stock">Time : <span>{post.startTime} -> {post.endTime}</span></h4>
                             <div id="accordion" className="accordion-area">
@@ -79,7 +80,7 @@ class Detail extends Component {
                                     <div id="collapse3" className="collapse" aria-labelledby="headingThree"
                                         data-parent="#accordion">
                                         <div className="panel-body">
-                                            <h2> Event's description </h2><br/>
+                                            <h2> Event's description </h2><br />
                                             <h4>{post.description}</h4>
 
                                         </div>
@@ -93,7 +94,13 @@ class Detail extends Component {
                                 <i className="fa fa-linkedin"></i>
                                 <i className="fa fa-youtube"></i>
                                 <i className="fa fa-whatsapp"></i>
-                                <Link to="/join" className="site-btn" style={{ marginLeft: '20px' }}>JOIN NOW</Link>
+                                <a type="buttom" className="site-btn" style={{ marginLeft: '20px' }} data-toggle="modal" data-target="#myModal">JOIN NOW</a>
+
+
+                                <Join post={post} />
+
+
+
                             </div>
                         </div>
 

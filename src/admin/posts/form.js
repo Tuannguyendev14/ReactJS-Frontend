@@ -20,7 +20,8 @@ class FormPost extends Component {
             nu_participant: '',
             venue: '',
             description: '',
-            createdAt: ''
+            createdAt: '',
+            postedBy:''
 
         }
     }
@@ -37,8 +38,8 @@ class FormPost extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        var { history } = this.props;
-        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description, createdAt } = this.state;
+        var { history , auth} = this.props;
+        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description, createdAt,postedBy } = this.state;
         var post = {
             id: id,
             user_name: user_name,
@@ -52,7 +53,8 @@ class FormPost extends Component {
             nu_participant: nu_participant,
             venue: venue,
             description: description,
-            createdAt: new Date()
+            createdAt: new Date(),
+            postedBy: auth.firstName+ auth.lastName
         }
 
         if (id) { // update
@@ -102,19 +104,19 @@ class FormPost extends Component {
                     <form className="contact-form" onSubmit={this.onSubmit}>
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <h3>Your name: </h3>
+                                <h3>Organizer: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="text" placeholder="Your name" name="user_name" value={this.state.user_name}
+                                <input type="text" placeholder="Organizer's name" name="user_name" value={this.state.user_name}
                                     onChange={this.onChange} required />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <h3>Your phone number: </h3>
+                                <h3>Phone number: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="number" placeholder="Your phone number" name="phone_number" value={this.state.phone_number}
+                                <input type="number" placeholder="Phone number" name="phone_number" value={this.state.phone_number}
                                     onChange={this.onChange} required />
                             </div>
                         </div>
@@ -217,7 +219,8 @@ class FormPost extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        postEditting: state.postEditting
+        postEditting: state.postEditting,
+        auth: state.firebase.profile
     };
 };
 
