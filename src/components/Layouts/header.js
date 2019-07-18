@@ -11,7 +11,6 @@ class Header extends Component {
 	render() {
 
 		const { auth, profile } = this.props;
-		console.log(auth);
 
 		const links = auth.uid ?
 			<div className="up-item">
@@ -30,7 +29,7 @@ class Header extends Component {
 					<div className="shopping-card">
 						<i className="glyphicon glyphicon-log-out" />
 					</div>
-					<a href="/signup" style={{ fontSize: '20px' }} onClick={this.logout}>Sign up</a>
+					<a href="/signup" style={{ fontSize: '20px' }} >Sign up</a>
 				</div></div>
 			;
 
@@ -106,7 +105,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
+	// console.log(state);
 	return {
 		auth: state.firebase.auth,
 		profile: state.firebase.profile

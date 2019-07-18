@@ -8,7 +8,6 @@ import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-
 class Index extends Component {
 
 	logout = () => {
@@ -21,9 +20,13 @@ class Index extends Component {
 
 		return (
 			<Fragment>
+
 				<Header logout={this.logout} />
+
 				<Slide />
+
 				<Caption />
+				
 				<div className="row" >
 					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
 						<div className="container-fluid">
@@ -32,7 +35,9 @@ class Index extends Component {
 					</div>
 				</div>
 				<br /><br />
+
 				<Footer />
+
 			</Fragment>
 		);
 	}

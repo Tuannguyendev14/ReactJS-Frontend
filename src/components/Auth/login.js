@@ -29,19 +29,14 @@ class Login extends Component {
 
     render() {
         const { authError, auth } = this.props;
-        if (auth.uid) return <Redirect to='/' />
 
-        // var call = () => {
-        //     var result = null;
-        //     if (auth.uid === '3uWF4biLlqRsT0B2zZUXtpPEsQH2') {
-        //         result = <Redirect to='/admin' />
-        //     } else {
-        //         result = <Redirect to='/' />
-        //     }
-        //     return result;
-        // }
-
-   
+        if (auth.uid) {
+            if (auth.uid === 'JlT2y8iTgleggEw4eiWChOxBMiQ2') {
+                return <Redirect to='/admin' />;
+            } else {
+                return <Redirect to='/' />;
+            }
+        }
 
         return (
             <div className="body">
@@ -59,8 +54,6 @@ class Login extends Component {
                         </div>
                         <center>
                             <button type="submit" className="btn btn-primary btn-lg" onClick={this.onsignIn}>Login</button>
-                            {/* <button type="button" class="btn btn-danger btn-lg" onClick={this.signup}>Sign up</button>  
-                              <input type="submit" value="Login" onClick={this.login} />  */}
                         </center>
                         <center>
                             <br />
@@ -90,4 +83,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

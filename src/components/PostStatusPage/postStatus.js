@@ -1,24 +1,35 @@
 import React, { Component } from 'react';
-
 import Header from './../Layouts/header';
 import Footer from './../Layouts/footer';
 import FormPost from './formPost';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-export default class PostStatus extends Component {
+class PostStatus extends Component {
 
-  render() {
-    var { history } = this.props;
-    return (
-      <div>
-        <Header />
-        <br /> <br /> <br />
+    render() {
+        var { history, auth } = this.props;
+        if (!auth.uid) return <Redirect to='/login' />
+        
+        return (
+            <div>
+                <Header />
+                <br /> <br /> <br />
 
-        <FormPost history={history} />
+                <FormPost history={history} />
 
-        <br /><br />
+                <br /><br />
 
-        <Footer />
-      </div>
-    );
-  }
+                <Footer />
+            </div>
+        );
+    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    };
+};
+
+export default connect(mapStateToProps, null)(PostStatus);

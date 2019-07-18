@@ -6,8 +6,8 @@ import * as actions from './../../actions/index';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
-
 class Content extends Component {
+
     componentDidMount() {
         this.props.fetchAllPosts();
     }

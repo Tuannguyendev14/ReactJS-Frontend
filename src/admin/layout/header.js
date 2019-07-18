@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
- 
+import { connect } from 'react-redux';
 
-
-export default class Header extends Component {
+class Header extends Component {
     render() {
+        const {profile} = this.props;
         return (
             <div>
                 <header className="header dark-bg">
-                    <div className="toggle-nav">
-                        <div className="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"> </div>
-                    </div>
-
                     <Link to="/admin" className="logo">DA NANG   <span className="lite">VOLUNTEERING</span></Link>
 
-                    <div className="top-nav notification-row">
-
-                        <ul className="nav pull-right top-menu">
-                            <li id="task_notificatoin_bar" className="dropdown" />
-
-                        </ul>
-
-                    </div>
+                    <a href="/admin" className="logo" style={{float:'right', marginRight:'450px'}}>{profile.firstName} {profile.lastName}  </a>
                 </header>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+	console.log(state);
+	return {
+		profile: state.firebase.profile
+	};
+};
+
+export default connect(mapStateToProps, null)(Header);
+
