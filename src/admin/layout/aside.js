@@ -32,6 +32,12 @@ class Aside extends Component {
                             </Link>
                         </li>
 
+                        <li className='sub-menu'>
+                            <Link to='/members' className="my-link">
+                                <span> Manage Members</span>
+                            </Link>
+                        </li>
+
                         <li className='active'>
                             <Link to='/signup' onClick={this.logout} className="my-link">
                                 <span> Log out</span>

@@ -163,6 +163,16 @@ margin-top: 40px;
     text-align: center; 
 }
 
+.gender{
+	width: 88%;
+    height: 44px;
+    border: none;
+    padding: 0 18px;
+    background: #f0f0f0;
+    border-radius: 40px;
+    margin-bottom: 17px;
+    font-size: 20px;
+}
 /*---------------------
   Commom elements
 -----------------------*/

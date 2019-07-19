@@ -3,8 +3,8 @@ import Blog from './blog';
 import Horizontal from './horizontal';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
+// import { firestoreConnect } from 'react-redux-firebase';
+// import { compose } from 'redux';
 
 class Content extends Component {
 
@@ -13,7 +13,7 @@ class Content extends Component {
     }
 
     render() {
-        var { posts, postFirebases } = this.props;
+        var { posts } = this.props;
 
         var results = posts.map((post, index) => {
             var result = null;
@@ -22,16 +22,7 @@ class Content extends Component {
                     post={post} onDelete={this.onDelete} />
             }
             return result;
-        }) ;
-
-        // var resultsFirebase = postFirebases.map((post, index) => {
-        //     var result = null;
-        //     if (posts.length > 0) {
-        //         result = <Blog key={index} index={index}
-        //             post={post} onDelete={this.onDelete} />
-        //     }
-        //     return result;
-        // }).slice(0, 3);
+        });
 
         return (
             <div>
@@ -63,7 +54,6 @@ class Content extends Component {
                         {/* {resultsFirebase} */}
                     </div>
                 </div>
-
 
                 <div className="  col-xs-12 col-sm-12 col-md-12 col-lg-12 wow bounceInUp" data-wow-duration="2s" data-wow-delay="0s"
                     data-wow-interaion={1} style={{ backgroundColor: '#e3ecec' }}><br /><br /><br /><br />
@@ -112,43 +102,41 @@ class Content extends Component {
                             <h3>Tình nguyện là một hoạt động đầy ý nghĩa có ảnh hưởng tích cực đến cộng đồng và xã hội. Nhưng bạn có
                                 biết
                                 rằng tình nguyện cũng mang lại cho bản thân bạn rất nhiều lợi ích? Dưới đây là một vài lý do bạn nên
-                    đi làm tình nguyện. </h3><br />
+                                đi làm tình nguyện.
+                            </h3>
 
-                            <br />
+                            <br /><br />
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <h3>
                                         <p className="glyphicon glyphicon-ok"> </p> Cải thiện sự nghiệp
-                        </h3>
+                                    </h3>
                                 </div>
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <h3>
                                         <p className="glyphicon glyphicon-ok"> </p> Một sở thích mới
-                        </h3>
+                                    </h3>
                                 </div>
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <h3>
                                         <p className="glyphicon glyphicon-ok"> </p> Một trải nghiệm mới
-                        </h3>
+                                    </h3>
                                 </div>
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <h3>
                                         <p className="glyphicon glyphicon-ok"> </p> Những kinh nghiệm mới
-                        </h3>
+                                    </h3>
                                 </div>
                             </div>
                         </div>
+
                         <div className=" col-xs-12 col-sm-12 col-md-12 col-lg-5">
                             <img src="img/blogs/tn6.jpg" className="img-responsive" alt="ok" />
-
                         </div>
                         <div className="  col-xs-0 col-sm-0 col-md-0 col-lg-1 "></div>
                     </div>
                 </div>
-
                 <br />
-
-
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
                         <iframe title="video" style={{ width: '100%', height: '800px' }} src="https://www.youtube.com/embed/EmTSk_flsKU"
@@ -162,15 +150,10 @@ class Content extends Component {
                     </div>
                 </div>
 
-
-
-
             </div>
-
         );
     }
 }
-
 
 const mapStateToProps = (state) => {
     console.log(state);
@@ -189,11 +172,3 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
-
-// export default compose(
-//     connect(mapStateToProps),
-//     firestoreConnect([
-//         { collection: 'posts' }
-//     ])
-// )
-// (Content);

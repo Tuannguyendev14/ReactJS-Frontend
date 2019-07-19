@@ -6,6 +6,11 @@ import feedbacks from './feedbacks';      // reducer listall
 import feedback from './readFeedback';
 import authReducer from './authReducer';
 import postReducer from './postReducer';
+import members from './members';      // reducer listall 
+import member from './readMember';
+import register_details from './register_details';
+
+
 import { firebaseReducer } from 'react-redux-firebase';
 
 import { combineReducers } from 'redux';
@@ -20,6 +25,9 @@ const myReducer = combineReducers({
     feedbacks,
     feedback,
     postReducer,
+    members,
+    member,
+    register_details,
     auth: authReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer

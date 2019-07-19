@@ -1,6 +1,6 @@
 import * as types from './../constants/actionTypes';
 import callApi from './../utils/apicaller';
-import firebase from '../Config/fire';
+// import firebase from '../Config/fire';
 
 export const actFetchPostsRequest = () => {
     return (dispatch) => {
@@ -197,6 +197,7 @@ export const signUp = (newUser) => {
             return firestore.collection('users').doc(resp.user.uid).set({
                 firstName: newUser.firstName,
                 lastName: newUser.lastName,
+                phoneNumber: newUser.phoneNumber,
                 initials: newUser.firstName[0] + newUser.lastName[0]
             })
         }).then(() => {
@@ -220,5 +221,80 @@ export const createPost = (post) => {
         }).catch((err)=>{
             dispatch({type:'CREATE_POST_ERROR', err});
         })
+    }
+}
+
+export const actAddMemberRequest = (member) => {
+    return dispatch => {
+        return callApi('members', 'POST', member).then(res => {
+            dispatch(actAddMember(res.data));
+        });
+    };
+}
+
+export const actAddMember = (member) => {
+    return {
+        type: types.ADD_MEMBER,
+        member
+    }
+}
+
+export const actFetchMembersRequest = () => {
+    return (dispatch) => {
+        return callApi('members', 'GET', null).then(res => {
+            dispatch(actFetchMembers(res.data));
+        });
+    };
+}
+
+export const actFetchMembers = (members) => {
+    return {
+        type: types.FETCH_MEMBERS,
+        members
+    }
+}
+
+export const actDeleteMemberRequest = (id) => {
+    return dispatch => {
+        return callApi(`members/${id}`, 'DELETE', null).then(res => {
+            dispatch(actDeleteMember(id));
+        });
+    };
+}
+
+export const actDeleteMember = (id) => {
+    return {
+        type: types.DELETE_MEMBER,
+        id
+    }
+}
+
+export const actReadMemberRequest = (id) => {
+    return dispatch => {
+        return callApi(`members/${id}`, 'GET', null).then(res => {
+            dispatch(actReadMember(res.data));
+        });
+    };
+}
+
+export const actReadMember = (member) => {
+    return {
+        type: types.READ_MEMBER,
+        member
+    }
+}
+
+export const actAddRegisterDetailRequest = (register_detail) => {
+    return dispatch => {
+        return callApi('register_details', 'POST', register_detail).then(res => {
+            dispatch(actAddRegisterDetail(res.data));
+        });
+    };
+}
+
+export const actAddRegisterDetail = (register_detail) => {
+    return {
+        type: types.ADD_REGISTER_DETAIL,
+        register_detail
     }
 }

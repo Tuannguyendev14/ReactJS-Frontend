@@ -33,9 +33,6 @@ var feedbacks = (state = initialState, action) => {
             state.push(action.feedback);
             return [...state];
 
-
-
-
         default: return [...state];
     }
 

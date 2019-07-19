@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './../Layouts/header';
 import Footer from './../Layouts/footer';
 import { connect } from 'react-redux';
@@ -13,12 +12,14 @@ class Detail extends Component {
         if (match) {
             var id = match.params.id;
             this.props.onReadPost(id);
-            console.log('ok');
         }
     }
 
     render() {
-        var { post } = this.props;
+        var { post, match } = this.props;
+
+        var elmTaskForm = match ? <Join post={post} match={match} /> : '';
+
         return (
             <div>
                 <Header />
@@ -61,7 +62,7 @@ class Detail extends Component {
                                 <div className="panel">
                                     <div className="panel-header" id="headingTwo">
                                         <button className="panel-link" data-toggle="collapse" data-target="#collapse2"
-                                            aria-expanded="false" aria-controls="collapse2">Sponsors </button>
+                                            aria-expanded="false" aria-controls="collapse2">Members </button>
                                     </div>
                                     <div id="collapse2" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div className="panel-body">
@@ -97,9 +98,8 @@ class Detail extends Component {
                                 <a type="buttom" className="site-btn" style={{ marginLeft: '20px' }} data-toggle="modal" data-target="#myModal">JOIN NOW</a>
 
 
-                                <Join post={post} />
 
-
+                                {elmTaskForm}
 
                             </div>
                         </div>

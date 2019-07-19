@@ -39,7 +39,7 @@ class FormPost extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         var { history , auth} = this.props;
-        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description, createdAt,postedBy } = this.state;
+        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description  } = this.state;
         var post = {
             id: id,
             user_name: user_name,

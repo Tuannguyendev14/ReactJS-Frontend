@@ -45,7 +45,7 @@ class Feedback extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         // var { history } = this.props;
-        var { id, user_name, user_email, subject, message, createdAt } = this.state;
+        var { id, user_name, user_email, subject, message } = this.state;
         var feedback = {
             id: id,
             user_name: user_name,
