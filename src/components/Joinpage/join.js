@@ -25,6 +25,7 @@ class Index extends Component {
     onClear = () => {
         this.setState({
             id: '',
+            id_member: '',
             name: '',
             email: '',
             phone: '',
@@ -32,15 +33,18 @@ class Index extends Component {
             gender: '',
             age: '',
             job: '',
-            createdAt: ''
+            createdAt: '',
+            id_event: ''
         });
     }
 
     onSubmit = (event) => {
         event.preventDefault();
-        var { id, name, email, phone, address, gender, age, job } = this.state;
+        var { id, id_member, name, email, phone, address, gender, age, job, id_event } = this.state;
+        var { match } = this.props;
+
         var member = {
-            id: id,
+            id_member: id_member,
             name: name,
             email: email,
             phone: phone,
@@ -51,6 +55,18 @@ class Index extends Component {
             createdAt: new Date()
         }
         this.props.onSubmit(member);
+
+        var id_member = id_member;
+        
+        var register_detail = {
+            id: id,
+            id_event: match.params.id,
+            id_member: id_member,
+            member_name: name
+
+        }
+
+        this.props.onSubmit_Detail(register_detail);
         alert("You have registed sucessfully");
         // history.goBack();
         this.onClear();
@@ -118,6 +134,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit: (member) => {
             dispatch(actions.actAddMemberRequest(member));
+        },
+        onSubmit_Detail: (register_detail) => {
             dispatch(actions.actAddRegisterDetailRequest(register_detail));
         }
     }

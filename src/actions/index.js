@@ -298,3 +298,18 @@ export const actAddRegisterDetail = (register_detail) => {
         register_detail
     }
 }
+
+export const actFetchDetailRegisterRequest = () => {
+    return (dispatch) => {
+        return callApi('register_details', 'GET', null).then(res => {
+            dispatch(actFetchRegisterDetail(res.data));
+        });
+    };
+}
+
+export const actFetchRegisterDetail = (members) => {
+    return {
+        type: types.FETCH_MEMBERS,
+        members
+    }
+}

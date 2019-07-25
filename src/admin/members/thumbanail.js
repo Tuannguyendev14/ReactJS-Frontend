@@ -22,7 +22,7 @@ export default class MemberThumbanail extends Component {
                     </div>
                     <div className="d-flex flex-wrap">
                         <div className="my-padding-right-8 my-padding-bottom-8  ">
-                            <Link to={`/showMember/${member.id}`}>
+                            <Link to={`/showMember/${member.id_member}`}>
                                 <button type="button" className="btn btn-success mr-10"><span
                                     className="glyphicon glyphicon-eye-open"> Detail</span></button>
                             </Link>
@@ -31,7 +31,7 @@ export default class MemberThumbanail extends Component {
                         <div className="my-padding-right-8 my-padding-bottom-8 ">
                             <Link to="/members">
                                 <button type="button" className="btn btn-danger mr-10">
-                                    <span className="glyphicon glyphicon-trash" onClick={() => this.onDelete(member.id)}> Delete</span></button>
+                                    <span className="glyphicon glyphicon-trash" onClick={() => this.onDelete(member.id_member)}> Delete</span></button>
                             </Link>
                         </div>
                     </div>

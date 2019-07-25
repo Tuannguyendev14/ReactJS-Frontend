@@ -8,10 +8,13 @@ export default class Blog extends Component {
         var { post } = this.props;
         return (
             <React.Fragment>
-                <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                    <div className="latest-news-wrap">
+                <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-interaion={1}>
+                    <div className="latest-news-wrap"><br />
+                        <h3 style={{ marginLeft: '15px', color: '#272b2a' }}> {post.postedBy} has just posted a status </h3><br />
+
                         <div className="news-img">
-                            <img src={post.event_image} className="img-responsive" alt="ok" style={{ width: '100%', height: '510px' }} />
+                            <img src={post.event_image || 'https://via.placeholder.com/400x350'} className="img-responsive" alt="ok" style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
                                 <span>{post.startDay}</span>
                             </div>
@@ -22,13 +25,19 @@ export default class Blog extends Component {
                             <i className="fa fa-linkedin"></i>
                             <i className="fa fa-youtube"></i>
                             <i className="fa fa-whatsapp"></i>
-                            <p> {post.description} </p><br />
-                            <p> { moment(post.createdAt).calendar()}</p>
-                            <Link to={`/detail/${post.id}`}>Read more ...</Link>
+                            <h4 style={{ float: 'right' }}> {moment(post.createdAt).calendar()}</h4>
 
+                            <center>
+                                <h3> {post.event_name} </h3><br />
+                                <Link to={`/detail/${post.id}`}>Read more ...</Link>
+                            </center>
                         </div>
                     </div>
+                    <br />
+                    <br />
+                    <br />
                 </div>
+
 
                 {/* <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div className="latest-news-wrap">

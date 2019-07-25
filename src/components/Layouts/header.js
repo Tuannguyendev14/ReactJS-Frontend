@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Logo from './../../logo3.jpg';
 
 class Header extends Component {
 
@@ -17,7 +18,7 @@ class Header extends Component {
 				<div className="shopping-card">
 					<i className="glyphicon glyphicon-log-out" />
 				</div>
-				<a href="/login" style={{ fontSize: '20px' }} onClick={this.logout}>Log out</a>
+				<a href="/login" style={{ fontSize: '20px' }} onClick={this.logout} alt="Log out">Log out</a>
 			</div>
 			:
 			<div>
@@ -29,7 +30,7 @@ class Header extends Component {
 					<div className="shopping-card">
 						<i className="glyphicon glyphicon-log-out" />
 					</div>
-					<a href="/signup" style={{ fontSize: '20px' }} >Sign up</a>
+					<a href="/signup" style={{ fontSize: '20px' }} alt="Sign up">Sign up</a>
 				</div></div>
 			;
 
@@ -41,9 +42,9 @@ class Header extends Component {
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-2 text-center text-lg-left">
-									<a href="./index" className="site-logo">
-										<img src="img/logo3.jpg" alt="ok" />
-									</a>
+									<Link to="/" className="site-logo">
+										<img src= {Logo	}  title="Dana Volunteering" />
+									</Link>
 								</div>
 								<div className="col-xl-6 col-lg-5">
 									<form className="header-search-form">
@@ -66,9 +67,9 @@ class Header extends Component {
 						<div className="container">
 							{/* menu */}
 							<ul className="main-menu">
-								<li> <Link to="/" className="nav-link">Home</Link> </li>
-								<li><Link to="/feedback" className="nav-link"> About us</Link></li>
-								<li><Link to="/poststatus">Post</Link></li>
+								<li title="Home"> <Link to="/" className="nav-link">Home</Link> </li>
+								<li title="Contact"><Link to="/feedback" className="nav-link"> About us</Link></li>
+								<li title="Post Status"><Link to="/poststatus">Post</Link></li>
 								<li><Link to="/ewrw">Event</Link>
 									<ul className="sub-menu">
 										<li><Link to="/ffwef">Donate Clother</Link></li>
@@ -88,13 +89,10 @@ class Header extends Component {
 								
 								<li><a href="/kk">Account</a>
 									<ul className="sub-menu">
-										<li><Link to="./product.html">Profile</Link></li>
-										<li><Link to="/poststatus" className="nav-link">Post status</Link> </li>
-										<li><Link to="./category.html">Log out Page</Link></li>
-										<li><Link to="/feedback" className="nav-link">Contact us</Link> </li>
+										<li title="Profile"><Link to="./profile" >Profile</Link></li>
 									</ul>
 								</li>
-								<li id="profile"><a href="/ll">{profile.initials}</a></li>
+								<li id="profile" title="Profile"><Link to="/profile">{profile.initials}</Link></li>
 
 							</ul>
 						</div>

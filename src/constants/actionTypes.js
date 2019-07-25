@@ -19,6 +19,7 @@ export const FETCH_MEMBERS = 'FETCH_MEMBERS';
 export const DELETE_MEMBER = 'DELETE_MEMBER';
 export const READ_MEMBER = 'READ_MEMBER';
 export const ADD_REGISTER_DETAIL = 'ADD_REGISTER_DETAIL';
+export const FETCH_REGISTER_DETAIL = 'FETCH_REGISTER_DETAIL';
 // create post by using fiebase
 export const CREATE_POST = 'CREATE_POST'; 
 export const CREATE_POST_ERROR = 'CREATE_POST_ERROR'; 

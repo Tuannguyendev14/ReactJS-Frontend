@@ -3,6 +3,7 @@ import Blog from './blog';
 import Horizontal from './horizontal';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
+import moment from 'moment';
 // import { firestoreConnect } from 'react-redux-firebase';
 // import { compose } from 'redux';
 
@@ -42,7 +43,6 @@ class Content extends Component {
                     </div>
                 </section>
                 <br /><br />
-
 
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
                     <Horizontal />

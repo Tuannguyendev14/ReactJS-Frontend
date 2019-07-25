@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Index from './components/Homepage/index';
 import PostStatus from './components/PostStatusPage/postStatus';
 import Login from './components/Auth/login';
@@ -19,6 +18,9 @@ import ShowFeed from './admin/feedbacks/show';
 import Join from './components/Joinpage/join';
 import IndexMember from './admin/members/index';
 import ShowMember from './admin/members/show';
+import Form from './components/upload/post';
+import Profile from './components/Profile/profile';
+
 
 
 const routes = [
@@ -31,6 +33,11 @@ const routes = [
         path: '/poststatus',
         exact: false,
         main: ({ history }) => <PostStatus history={history} />
+    },
+    {
+        path: '/update/:id/edit',
+        exact: false,
+        main: ({ match, history }) => <PostStatus match={match} history={history} />
     },
     {
         path: '/feedback',
@@ -116,6 +123,16 @@ const routes = [
         path: '/showMember/:id',
         exact: false,
         main: ({ match }) => <ShowMember match={match} />
+    },
+    {
+        path: '/form',
+        exact: false,
+        main: ({ match }) => <Form match={match} />
+    },
+    {
+        path: '/profile',
+        exact: false,
+        main: ({ match }) => <Profile match={match} />
     },
     {
         path: '',
