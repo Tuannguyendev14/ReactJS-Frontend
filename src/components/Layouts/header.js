@@ -43,7 +43,7 @@ class Header extends Component {
 							<div className="row">
 								<div className="col-lg-2 text-center text-lg-left">
 									<Link to="/" className="site-logo">
-										<img src= {Logo	}  title="Dana Volunteering" />
+										<img src= {Logo	}  title="Dana Volunteering" alt="Logo" />
 									</Link>
 								</div>
 								<div className="col-xl-6 col-lg-5">

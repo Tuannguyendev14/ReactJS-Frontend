@@ -56,8 +56,6 @@ class Index extends Component {
         }
         this.props.onSubmit(member);
 
-        var id_member = id_member;
-
         var register_detail = {
             id: id,
             id_event: match.params.id,

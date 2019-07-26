@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from './../Layouts/header';
-import Footer from './../Layouts/footer';
 import Form from './form';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';

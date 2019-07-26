@@ -8,7 +8,6 @@ export default class addPost extends Component {
     render() {
 
         var { history, match } = this.props;
-        var { match } = this.props;
         if (match) {
             var id = match.params.id;
         }

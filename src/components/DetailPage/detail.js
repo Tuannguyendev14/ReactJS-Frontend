@@ -41,7 +41,7 @@ class Detail extends Component {
                 <div className="page-top-info">
                     <div className="container">
                         <center>
-                            <h1> {post.event_name}  </h1>
+                            <h1 style={{color:'#fd05e8'}}> {post.event_name}  </h1>
                         </center>
                     </div>
                 </div>

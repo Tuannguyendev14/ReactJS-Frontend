@@ -14,8 +14,8 @@ var initialState = [];
 // }
 
 var register_details = (state = initialState, action) => {
-    var { id } = action;
-    var index = -1;
+    // var { id } = action;
+    // var index = -1;
 
     switch (action.type) {
         case types.ADD_REGISTER_DETAIL:
