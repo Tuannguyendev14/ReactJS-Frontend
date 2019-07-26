@@ -63,11 +63,11 @@ class Feedback extends Component {
         alert("Your feedback has sent successfuly");
     }
 
-
-
     render() {
+
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/login' />
+
         return (
             <div>
                 <Header />

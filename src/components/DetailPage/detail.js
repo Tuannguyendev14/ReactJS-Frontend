@@ -45,6 +45,7 @@ class Detail extends Component {
                         </center>
                     </div>
                 </div>
+
                 <section className="product-section">
                     <div className="row">
                         <div className="col-xs-0 col-sm-0 col-md-0 col-lg-1"></div>
@@ -142,4 +143,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);

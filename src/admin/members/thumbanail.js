@@ -12,6 +12,7 @@ export default class MemberThumbanail extends Component {
     }
 
     render() {
+
         var { member } = this.props;
 
         return (
@@ -27,7 +28,7 @@ export default class MemberThumbanail extends Component {
                                     className="glyphicon glyphicon-eye-open"> Detail</span></button>
                             </Link>
                         </div>
-                         
+
                         <div className="my-padding-right-8 my-padding-bottom-8 ">
                             <Link to="/members">
                                 <button type="button" className="btn btn-danger mr-10">

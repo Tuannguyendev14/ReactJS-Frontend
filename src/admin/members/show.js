@@ -18,6 +18,7 @@ class showMember extends Component {
     }
 
     render() {
+
         var { member } = this.props;
 
         return (
@@ -26,11 +27,12 @@ class showMember extends Component {
                     <Header />
                     <Aside />
                 </section>
+
                 <section id="main-content">
                     <section className="wrapper">
                         <div className="container ">
                             <center> <div className="page-header">
-                                <h1 style={{ fontFamily: ' time new roman' , color:'blue'}}> {member.name} </h1>
+                                <h1 style={{ fontFamily: ' time new roman', color: 'blue' }}> {member.name} </h1>
                             </div></center>
                             <div className="row">
                                 <div className="  col-sm-3  "></div>
@@ -44,6 +46,7 @@ class showMember extends Component {
                                             <h3> {member.email} </h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Phone number</h3>
@@ -59,9 +62,10 @@ class showMember extends Component {
                                             <h3>Address</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                        <h3> {member.address}</h3>
+                                            <h3> {member.address}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Gender</h3>
@@ -70,6 +74,7 @@ class showMember extends Component {
                                             <h3> {member.gender}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Age</h3>
@@ -78,6 +83,7 @@ class showMember extends Component {
                                             <h3> {member.age}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Job</h3>
@@ -86,17 +92,16 @@ class showMember extends Component {
                                             <h3> {member.job}</h3>
                                         </div>
                                     </div>
-                                     
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Created at</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3 className="form-control-static"> { moment(member.createdAt).calendar()}</h3>
-
+                                            <h3 className="form-control-static"> {moment(member.createdAt).calendar()}</h3>
                                         </div>
                                     </div>
-                                    
+
                                     <br /><br />
                                     <div className="row">
                                         <div className=" col-sm-3 "></div>
@@ -106,10 +111,9 @@ class showMember extends Component {
                                                     className="glyphicon glyphicon-backward"> Back</span> </button>
                                             </Link>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                                <div className="  col-sm-1  "></div>
+                                <div className="col-sm-1" />
                             </div>
                         </div>
                     </section>
@@ -132,4 +136,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(showMember);

@@ -18,6 +18,7 @@ class showPost extends Component {
     }
 
     render() {
+
         var { post } = this.props;
 
         return (
@@ -30,7 +31,7 @@ class showPost extends Component {
                     <section className="wrapper">
                         <div className="container ">
                             <center> <div className="page-header">
-                                <h1 style={{ fontFamily: ' time new roman' , color:'blue'}}> {post.event_name} </h1>
+                                <h1 style={{ fontFamily: ' time new roman', color: 'blue' }}> {post.event_name} </h1>
                             </div></center>
                             <div className="row">
                                 <div className="  col-sm-3  "></div>
@@ -44,6 +45,7 @@ class showPost extends Component {
                                             <h3> {post.user_name} </h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Phone number</h3>
@@ -62,6 +64,7 @@ class showPost extends Component {
                                             <img src={post.event_image} alt="d" />
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Start day</h3>
@@ -70,6 +73,7 @@ class showPost extends Component {
                                             <h3> {post.startDay}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Start time</h3>
@@ -78,6 +82,7 @@ class showPost extends Component {
                                             <h3> {post.startTime}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>End day</h3>
@@ -86,6 +91,7 @@ class showPost extends Component {
                                             <h3> {post.endDay}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>End time</h3>
@@ -94,6 +100,7 @@ class showPost extends Component {
                                             <h3> {post.endTime}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Nu_participant</h3>
@@ -102,6 +109,7 @@ class showPost extends Component {
                                             <h3 className="form-control-static"> {post.nu_participant}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Venue</h3>
@@ -110,6 +118,7 @@ class showPost extends Component {
                                             <h3 className="form-control-static"> {post.venue}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Description</h3>
@@ -118,24 +127,27 @@ class showPost extends Component {
                                             <h3 className="form-control-static"> {post.description}</h3>
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Created at</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3 className="form-control-static"> { moment(post.createdAt).calendar()}</h3>
+                                            <h3 className="form-control-static"> {moment(post.createdAt).calendar()}</h3>
 
                                         </div>
                                     </div>
+
                                     <div className="row">
                                         <div className="col-xs-2 col-sm-2 col-md-2 col-lg-4">
                                             <h3>Posted by</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3 className="form-control-static"> { post.postedBy}</h3>
+                                            <h3 className="form-control-static"> {post.postedBy}</h3>
 
                                         </div>
                                     </div>
+
                                     <br /><br />
                                     <div className="row">
                                         <div className=" col-sm-1 "></div>
@@ -152,8 +164,9 @@ class showPost extends Component {
                                             </Link>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div className="  col-sm-1  "></div>
+                                <div className="  col-sm-1  " />
                             </div>
                         </div>
                     </section>
@@ -176,4 +189,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(showPost);

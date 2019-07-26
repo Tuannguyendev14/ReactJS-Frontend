@@ -70,7 +70,6 @@ export const actUpdatePostRequest = (post) => {
     };
 }
 
-
 export const actUpdatePost = (post) => {
     return {
         type: types.UPDATE_POST,
@@ -183,8 +182,6 @@ export const signOut = () => {
     }
 }
 
-
-
 export const signUp = (newUser) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firebase = getFirebase();
@@ -214,12 +211,12 @@ export const createPost = (post) => {
 
         firestore.collection('posts').add({
             ...post,
-            username:'Tuan',
+            username: 'Tuan',
             createdAt: new Date()
         }).then(() => {
             dispatch({ type: 'CREATE_POST', post });
-        }).catch((err)=>{
-            dispatch({type:'CREATE_POST_ERROR', err});
+        }).catch((err) => {
+            dispatch({ type: 'CREATE_POST_ERROR', err });
         })
     }
 }

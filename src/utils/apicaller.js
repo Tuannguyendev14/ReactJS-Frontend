@@ -10,5 +10,4 @@ export default function callApi(endpoint, method , body){
     }).catch(err=>{
         console.log(err);
     });
-    
 };

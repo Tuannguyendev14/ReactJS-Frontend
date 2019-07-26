@@ -12,6 +12,7 @@ export default class Table extends Component {
     }
 
     render() {
+
         var { feedback, index } = this.props;
 
         return (
@@ -23,9 +24,10 @@ export default class Table extends Component {
 
                 <td className="text-center">
                     <Link to={`/showFeed/${feedback.id}`}>
-                        <button type="button" className="btn btn-success btn-xs" style={{marginRight: '16px'}}><span
+                        <button type="button" className="btn btn-success btn-xs" style={{ marginRight: '16px' }}><span
                             className="glyphicon glyphicon-eye-open">Detail</span></button>
                     </Link>
+
                     <button type="button" className="btn btn-danger btn-xs" onClick={() => this.onDelete(feedback.id)} >    Delete </button>
 
                 </td>

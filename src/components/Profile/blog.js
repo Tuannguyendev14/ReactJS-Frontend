@@ -14,7 +14,9 @@ class Blog extends Component {
     }
 
     render() {
+
         var { post } = this.props;
+
         return (
             <div className="container">
 
@@ -24,16 +26,14 @@ class Blog extends Component {
                     <div className="latest-news-wrap">
                         <h3 style={{ marginLeft: '15px', color: '#272b2a' }}> {post.postedBy} has just posted a status </h3><br />
 
-
                         <div className="news-img">
-
-                            <img src={post.event_image || 'https://via.placeholder.com/400x350'}   className="img-responsive" alt="ok"
+                            <img src={post.event_image || 'https://via.placeholder.com/400x350'} className="img-responsive" alt="ok"
                                 style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
                                 <span>{post.startDay}</span>
-
                             </div>
                         </div>
+
                         <div className="news-content">
                             <i className="fa fa-facebook"></i>
                             <i className="fa fa-twitter"></i>
@@ -45,6 +45,7 @@ class Blog extends Component {
                                 <h3> {post.event_name} </h3><br />
                             </center>
                         </div>
+
                         <center>
                             <Link to={`/detail/${post.id}`}>
                                 <button type="button" className="btn btn-success mr-10"><span
@@ -61,7 +62,9 @@ class Blog extends Component {
                                     <span className="glyphicon glyphicon-trash" onClick={() => this.onDelete(post.id)}> Delete</span></button>
                             </Link>
                         </center>
+
                         <br />
+
                     </div>
                     <br /><br /><br />
                 </div>

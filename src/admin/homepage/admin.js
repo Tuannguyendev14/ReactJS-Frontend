@@ -8,23 +8,23 @@ import { Redirect } from 'react-router-dom';
 class indexTrip extends Component {
 
     render() {
+
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/login' />
+
         return (
             <div>
-
                 <section id="container" >
                     <Header />
                     <Aside />
                 </section>
-                
+
                 <section id="main-content">
                     <section className="wrapper">
                         <br /><br />
                         <Slide />
                     </section>
                 </section>
-
             </div >
         );
     }

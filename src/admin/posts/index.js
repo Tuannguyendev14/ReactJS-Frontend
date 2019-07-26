@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
 
-
-
 class indexPost extends Component {
-   
+
     constructor(props) {
         super(props);
         this.state = {
@@ -39,6 +37,7 @@ class indexPost extends Component {
     }
 
     render() {
+
         var { posts, filter } = this.props;
 
         if (filter.name) {
@@ -56,13 +55,13 @@ class indexPost extends Component {
             return result;
         });
 
-         
         return (
             <Fragment>
                 <section id="container">
                     <Header />
                     <Aside />
                 </section>
+
                 <section id="main-content">
                     <section className="wrapper">
                         <center>
@@ -84,9 +83,8 @@ class indexPost extends Component {
                         <div className="row">
                             {results}
                         </div>
-
                     </section>
-                    
+
                 </section>
             </Fragment>
         );

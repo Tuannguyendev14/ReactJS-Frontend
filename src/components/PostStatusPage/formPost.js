@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link, Prompt } from 'react-router-dom';
 import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 class FormPost extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -36,7 +36,6 @@ class FormPost extends Component {
             isBlocking: event.target.value.length > 0
         });
     }
-
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -97,11 +96,7 @@ class FormPost extends Component {
         }
     }
 
-
-
     render() {
-
-
 
         return (
             <div className='row'>
@@ -138,7 +133,7 @@ class FormPost extends Component {
                                 <h3>Event image: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="text" placeholder="Event's image" name="event_image" onChange={this.onChange} value={this.state.event_image}   />
+                                <input type="text" placeholder="Event's image" name="event_image" onChange={this.onChange} value={this.state.event_image} />
                             </div>
                         </div>
                         <div className="row">
@@ -204,7 +199,6 @@ class FormPost extends Component {
                             <button style={{ marginLeft: '40px' }} type="submit" className="site-btn">Post now</button>
                         </center>
 
-
                     </form>
                 </div>
                 <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2"> </div>
@@ -233,4 +227,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(FormPost); 

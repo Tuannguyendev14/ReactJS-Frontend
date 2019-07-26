@@ -5,8 +5,6 @@ import MemberThumbanail from './thumbanail';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
 
-
-
 class indexMember extends Component {
 
     constructor(props) {
@@ -38,6 +36,7 @@ class indexMember extends Component {
     }
 
     render() {
+
         var { members, filter } = this.props;
 
         if (filter.name) {
@@ -107,4 +106,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(indexMember);

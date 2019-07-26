@@ -10,8 +10,10 @@ class Aside extends Component {
     }
 
     render() {
+
         return (
             <aside>
+
                 <div id="sidebar" className="nav-collapse ">
                     <ul className="sidebar-menu">
                         <li className='active'>
@@ -45,6 +47,7 @@ class Aside extends Component {
                         </li>
                     </ul>
                 </div>
+
             </aside>
         );
     }

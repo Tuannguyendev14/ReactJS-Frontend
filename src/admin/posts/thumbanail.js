@@ -12,6 +12,7 @@ export default class Thumbanail extends Component {
     }
 
     render() {
+
         var { post } = this.props;
 
         return (

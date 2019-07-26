@@ -5,7 +5,9 @@ import moment from 'moment';
 export default class Blog extends Component {
 
     render() {
+
         var { post } = this.props;
+
         return (
             <React.Fragment>
                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="2s" data-wow-delay="0s"
@@ -126,9 +128,7 @@ export default class Blog extends Component {
                         </div>
                     </div>
                 </div> */}
-
             </React.Fragment>
-
         );
     }
 }

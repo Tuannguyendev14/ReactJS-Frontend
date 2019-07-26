@@ -6,6 +6,7 @@ import Form from './form';
 export default class addPost extends Component {
 
     render() {
+
         var { history, match } = this.props;
         var { match } = this.props;
         if (match) {
@@ -20,6 +21,7 @@ export default class addPost extends Component {
                     <Header />
                     <Aside />
                 </section>
+
                 <section id="main-content">
                     <section className="wrapper">
                         <br /><br />

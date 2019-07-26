@@ -3,9 +3,6 @@ import Blog from './blog';
 import Horizontal from './horizontal';
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
-import moment from 'moment';
-// import { firestoreConnect } from 'react-redux-firebase';
-// import { compose } from 'redux';
 
 class Content extends Component {
 
@@ -14,6 +11,7 @@ class Content extends Component {
     }
 
     render() {
+
         var { posts } = this.props;
 
         var results = posts.map((post, index) => {
@@ -157,7 +155,6 @@ class Content extends Component {
 
 const mapStateToProps = (state) => {
     console.log(state);
-
     return {
         posts: state.posts
         // postFirebases: state.postReducer.posts
@@ -171,4 +168,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Content);

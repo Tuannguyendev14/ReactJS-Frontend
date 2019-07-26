@@ -17,7 +17,8 @@ class PostStatus extends Component {
             var id = match.params.id;
         }
 
-        const title = id ? <h1 style={{color:'#0722f7'}}> Update information</h1> : <h1 style={{color:'red'}}>Create new event</h1>
+        const title = id ? <h1 style={{ color: '#0722f7' }}> Update information</h1> : <h1 style={{ color: 'red' }}>Create new event</h1>
+        
         return (
             <div>
                 <Header />

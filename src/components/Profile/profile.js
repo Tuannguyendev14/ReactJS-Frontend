@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import Blog from './blog';
-
 import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
 import Header from './../Layouts/header';
 import Footer from './../Layouts/footer';
 
 class Profile extends Component {
-
 
     componentDidMount() {
         this.props.fetchAllPosts();
@@ -18,6 +16,7 @@ class Profile extends Component {
     }
 
     render() {
+
         var { posts, profile } = this.props;
         var name = profile.firstName + profile.lastName;
 

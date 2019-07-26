@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from './../../actions/index';
 
 class indexFeedback extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +52,8 @@ class indexFeedback extends Component {
                 <section id="container">
                     <Header />
                     <Aside />
-                </section>
+                </section> 
+
                 <section id="main-content">
                     <section className="wrapper">
                         <div className="row">
@@ -60,6 +62,7 @@ class indexFeedback extends Component {
                                 </div>
                                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8 css">
                                     <h2 style={{ color: 'red' }}>Customer's feedbacks</h2><br />
+
                                     <table className="table table-striped table-hover table-bordered">
                                         <thead>
                                             <tr>
@@ -74,6 +77,7 @@ class indexFeedback extends Component {
                                             {results}
                                         </tbody>
                                     </table>
+
                                 </div>
                                 <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 </div>
@@ -81,6 +85,7 @@ class indexFeedback extends Component {
                         </div>
                     </section>
                 </section>
+
             </Fragment>
         );
     }
@@ -101,9 +106,6 @@ const mapDispatchToProps = (dispatch, props) => {
         onDeleteFeedback: (id) => {
             dispatch(actions.actDeleteFeedbackRequest(id));
         }
-        // ,
-        // onFilter: (filter) => {
-        // dispatch(actions.filterPost(filter));
     }
 }
 

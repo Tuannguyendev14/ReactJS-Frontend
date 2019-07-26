@@ -4,6 +4,7 @@ import * as actions from './../../actions/index';
 import { connect } from 'react-redux';
 
 class FormPost extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,8 +22,7 @@ class FormPost extends Component {
             venue: '',
             description: '',
             createdAt: '',
-            postedBy:''
-
+            postedBy: ''
         }
     }
 
@@ -38,8 +38,8 @@ class FormPost extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        var { history , auth} = this.props;
-        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description  } = this.state;
+        var { history, auth } = this.props;
+        var { id, user_name, phone_number, event_name, event_image, startDay, startTime, endDay, endTime, nu_participant, venue, description } = this.state;
         var post = {
             id: id,
             user_name: user_name,
@@ -54,7 +54,7 @@ class FormPost extends Component {
             venue: venue,
             description: description,
             createdAt: new Date(),
-            postedBy: auth.firstName+ auth.lastName
+            postedBy: auth.firstName + auth.lastName
         }
 
         if (id) { // update
@@ -96,12 +96,14 @@ class FormPost extends Component {
     }
 
     render() {
+
         return (
             <div className='row'>
                 <Prompt when={this.state.isBlocking} message={location => ('Are you sure to move to other page')} />
                 <div className="col-xs-0 col-sm-0 col-md-0 col-lg-3"> </div>
                 <div className="col-xs-12 col-sm-12 col-md-6 col-lg-7 contact-section contact-info">
                     <form className="contact-form" onSubmit={this.onSubmit}>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Organizer: </h3>
@@ -111,6 +113,7 @@ class FormPost extends Component {
                                     onChange={this.onChange} required />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Phone number: </h3>
@@ -120,6 +123,7 @@ class FormPost extends Component {
                                     onChange={this.onChange} required />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Event name: </h3>
@@ -129,6 +133,7 @@ class FormPost extends Component {
                                     onChange={this.onChange} required />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Event image: </h3>
@@ -138,6 +143,7 @@ class FormPost extends Component {
                                     onChange={this.onChange} required />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Start day: </h3>
@@ -147,6 +153,7 @@ class FormPost extends Component {
                                     value={this.state.startDay} onChange={this.onChange} required="required" />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Start time: </h3>
@@ -156,6 +163,7 @@ class FormPost extends Component {
                                     value={this.state.startTime} onChange={this.onChange} required="required" />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>End day: </h3>
@@ -165,6 +173,7 @@ class FormPost extends Component {
                                     value={this.state.endDay} onChange={this.onChange} required="required" />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>End time: </h3>
@@ -174,6 +183,7 @@ class FormPost extends Component {
                                     value={this.state.endTime} onChange={this.onChange} required="required" />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Nu participant: </h3>
@@ -183,6 +193,7 @@ class FormPost extends Component {
                                     value={this.state.nu_participant} onChange={this.onChange} required />
                             </div>
                         </div>
+
                         <div className="row">
                             <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                 <h3>Venue: </h3>
@@ -202,12 +213,12 @@ class FormPost extends Component {
                                     value={this.state.description} rows="3" required="required"></textarea>
                             </div>
                         </div>
+
                         <center>
                             <Link to="/posts"> <button style={{ marginLeft: '-125px' }} type="button"
                                 className="site-btn">Back</button></Link>
                             <button style={{ marginLeft: '40px' }} type="submit" className="site-btn">Post now</button>
                         </center>
-
 
                     </form>
                 </div>
@@ -240,4 +251,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(FormPost);

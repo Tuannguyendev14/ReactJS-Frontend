@@ -30,8 +30,10 @@ class Signup extends Component {
     }
 
     render() {
+
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to='/' />
+
         return (
             <div className="body">
                 <div className="box">
@@ -58,10 +60,7 @@ class Signup extends Component {
                             <input type="password" id="password" onChange={this.handleChange} required=" " />
                             <label>Password</label>
                         </div>
-                        {/* <div className="inputBox">
-                <input type="password" name="" required=" " />
-                <label>Confirm Password</label>
-            </div> */}
+
                         <input type="reset" id="btn" name="" value="Reset" />
                         <input type="submit" id="btn" name="" value="Register" />
 
@@ -72,13 +71,10 @@ class Signup extends Component {
                     </form>
 
                 </div>
-
             </div>
-
         );
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {
@@ -94,4 +90,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

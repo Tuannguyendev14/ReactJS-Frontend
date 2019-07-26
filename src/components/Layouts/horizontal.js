@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 export default class Horizontal extends Component {
 
     render() {
@@ -23,7 +22,6 @@ export default class Horizontal extends Component {
                 </div>
                 <br />
             </div>
-
         );
     }
 }

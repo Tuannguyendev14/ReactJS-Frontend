@@ -30,7 +30,9 @@ class showFeedback extends Component {
                     <Header />
                     <Aside />
                 </section>
+
                 <section id="main-content">
+
                     <section className="wrapper">
                         <div className="container ">
                             <center> <div className="page-header">
@@ -79,7 +81,7 @@ class showFeedback extends Component {
                                             <h3>createdAt</h3>
                                         </div>
                                         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                            <h3 className="form-control-static"> { moment(feedback.createdAt).calendar()}</h3>
+                                            <h3 className="form-control-static"> {moment(feedback.createdAt).calendar()}</h3>
                                         </div>
                                     </div>
                                     <br /><br />
@@ -101,6 +103,7 @@ class showFeedback extends Component {
                             </div>
                         </div>
                     </section>
+
                 </section>
             </div>
         );
@@ -123,4 +126,5 @@ const mapDispatchToProps = (dispatch, props) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(showFeedback);

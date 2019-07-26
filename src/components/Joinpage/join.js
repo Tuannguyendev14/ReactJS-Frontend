@@ -40,7 +40,7 @@ class Index extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        var { id, id_member, name, email, phone, address, gender, age, job, id_event } = this.state;
+        var { id, id_member, name, email, phone, address, gender, age, job } = this.state;
         var { match } = this.props;
 
         var member = {
@@ -57,7 +57,7 @@ class Index extends Component {
         this.props.onSubmit(member);
 
         var id_member = id_member;
-        
+
         var register_detail = {
             id: id,
             id_event: match.params.id,
@@ -79,8 +79,11 @@ class Index extends Component {
             console.log(id);
         }
     }
+
     render() {
+
         var { post, auth, authEmail } = this.props;
+
         return (
             <div className="modal fade" id="myModal">
                 <div className="modal-dialog modal-xl" style={{ float: 'left', marginLeft: '-420px', width: '900px' }}>
@@ -140,4 +143,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Index);
