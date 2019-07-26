@@ -7,6 +7,13 @@ export default class addPost extends Component {
 
     render() {
         var { history, match } = this.props;
+        var { match } = this.props;
+        if (match) {
+            var id = match.params.id;
+        }
+
+        const title = id ? <h1 style={{ color: '#0722f7' }}> Update information</h1> : <h1 style={{ color: 'red' }}>Create new event</h1>
+
         return (
             <div>
                 <section id="container" >
@@ -16,7 +23,7 @@ export default class addPost extends Component {
                 <section id="main-content">
                     <section className="wrapper">
                         <br /><br />
-                        <center><h1>Create new post</h1></center>
+                        <center>{title}</center>
                         <Form history={history} match={match} />
                     </section>
                 </section>

@@ -13,6 +13,10 @@ class Profile extends Component {
         this.props.fetchAllPosts();
     }
 
+    onDelete = (id) => {
+        this.props.onDeletePost(id);
+    }
+
     render() {
         var { posts, profile } = this.props;
         var name = profile.firstName + profile.lastName;
@@ -61,6 +65,9 @@ const mapDispatchToProps = (dispatch, props) => {
     return {
         fetchAllPosts: () => {
             dispatch(actions.actFetchPostsRequest());
+        },
+        onDeletePost: (id) => {
+            dispatch(actions.actDeletePostRequest(id));
         }
     }
 }

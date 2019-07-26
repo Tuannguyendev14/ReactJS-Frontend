@@ -5,12 +5,20 @@ import moment from 'moment';
 
 class Blog extends Component {
 
+    onDelete = (id) => {
+        var { post } = this.props;
+        if (confirm('Are you sure to delete ?')) { //eslint-disable-line
+            this.props.onDelete(id);
+            alert(post.event_name + ' has successfully been deleted');
+        }
+    }
+
     render() {
         var { post } = this.props;
         return (
             <div className="container">
 
-                <div class="col-xs-0 col-sm-0 col-md-0 col-lg-2" />
+                <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2" />
 
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-8">
                     <div className="latest-news-wrap">
@@ -19,7 +27,7 @@ class Blog extends Component {
 
                         <div className="news-img">
 
-                            <img src={post.event_image} className="img-responsive" alt="ok"
+                            <img src={post.event_image || 'https://via.placeholder.com/400x350'}   className="img-responsive" alt="ok"
                                 style={{ width: '100%', height: '510px' }} />
                             <div className="deat">
                                 <span>{post.startDay}</span>
@@ -43,12 +51,12 @@ class Blog extends Component {
                                     className="glyphicon glyphicon-eye-open"> Detail</span></button>
                             </Link>
 
-                            <Link to={`/post/${post.id}/edit`}>
+                            <Link to={`/update/${post.id}/edit`}>
                                 <button type="button" className="btn btn-primary mr-10">
                                     <span className="glyphicon glyphicon-edit"> Edit</span></button>
                             </Link>
 
-                            <Link to="/posts">
+                            <Link to="/profile">
                                 <button type="button" className="btn btn-danger mr-10">
                                     <span className="glyphicon glyphicon-trash" onClick={() => this.onDelete(post.id)}> Delete</span></button>
                             </Link>
@@ -57,7 +65,7 @@ class Blog extends Component {
                     </div>
                     <br /><br /><br />
                 </div>
-                <div class="col-xs-0 col-sm-0 col-md-0 col-lg-2" />
+                <div className="col-xs-0 col-sm-0 col-md-0 col-lg-2" />
             </div>
         );
     }

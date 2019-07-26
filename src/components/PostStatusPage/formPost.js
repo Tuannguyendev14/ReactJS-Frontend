@@ -138,7 +138,7 @@ class FormPost extends Component {
                                 <h3>Event image: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="text" name="event_image" onChange={this.onChange} value={this.state.event_image} required />
+                                <input type="text" placeholder="Event's image" name="event_image" onChange={this.onChange} value={this.state.event_image}   />
                             </div>
                         </div>
                         <div className="row">
@@ -178,7 +178,7 @@ class FormPost extends Component {
                                 <h3>Nu participant: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="number" name="nu_participant" onChange={this.onChange} value={this.state.nu_participant} required />
+                                <input type="number" placeholder="Number of participant" name="nu_participant" onChange={this.onChange} value={this.state.nu_participant} required />
                             </div>
                         </div>
                         <div className="row">
@@ -186,7 +186,7 @@ class FormPost extends Component {
                                 <h3>Venue: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <input type="text " name="venue" onChange={this.onChange} value={this.state.venue} required />
+                                <input type="text " placeholder="Place" name="venue" onChange={this.onChange} value={this.state.venue} required />
                             </div>
                         </div>
 
@@ -195,7 +195,7 @@ class FormPost extends Component {
                                 <h3>Description: </h3>
                             </div>
                             <div className="col-xs-7 col-sm-7 col-md-7 col-lg-8">
-                                <textarea name="description" onChange={this.onChange} value={this.state.description} rows="3" required />
+                                <textarea name="description" placeholder="Description" onChange={this.onChange} value={this.state.description} rows="3" required />
                             </div>
                         </div>
                         <center>

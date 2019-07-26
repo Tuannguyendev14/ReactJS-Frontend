@@ -26,11 +26,11 @@ class Detail extends Component {
 
         const links = post.postedBy === name ?
             <Fragment>
-                <a href={`/update/${post.id}/edit`} className="site-btn" style={{ marginLeft: '20px' }} >Update</a>
+                <Link to={`/update/${post.id}/edit`} className="site-btn" style={{ marginLeft: '20px' }} >Update</Link>
             </Fragment>
             :
             <Fragment>
-                <a type="buttom" className="site-btn" style={{ marginLeft: '20px' }} data-toggle="modal" data-target="#myModal">JOIN NOW</a>
+                <Link type="buttom" className="site-btn" style={{ marginLeft: '20px' }} data-toggle="modal" data-target="#myModal">JOIN NOW</Link>
             </Fragment>
             ;
 
@@ -113,7 +113,10 @@ class Detail extends Component {
                                 <i className="fa fa-linkedin"></i>
                                 <i className="fa fa-youtube"></i>
                                 <i className="fa fa-whatsapp"></i>
+                                <Link to={`/`} className="site-btn" style={{ marginLeft: '20px' }} >Back</Link>
+
                                 {links}
+
                                 {elmTaskForm}
                             </div>
                         </div>
